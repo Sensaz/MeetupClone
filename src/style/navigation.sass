@@ -1,0 +1,75 @@
+@mixin tabletDevice
+    @media screen and (min-width: 730px)
+        @content
+
+@mixin laptopDevice
+    @media screen and (min-width: 1200px)
+        @content
+
+.navigation
+    width: 100%
+    padding: 10px 0
+    border-bottom: 2px solid black
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        width: 95%
+        margin: 0 auto
+    &__main
+        position: absolute
+        left: 0
+        top: 0
+        display: flex
+        flex-direction: column
+        gap: 20px
+        height: auto
+        min-height: 100vh
+        padding: 36px 8px
+        background-color: #747e7e
+        transform: translateX(-120%)
+        transition: transform .3s linear
+        @include tabletDevice
+            background-color: transparent
+            align-items: flex-start
+            position: relative
+            font-size: 12px
+            min-height: auto
+            transform: translateX(0)
+            @include laptopDevice
+                flex-direction: row
+        &--show
+            transform: translateX(0)
+    &__logo
+        font-size: 1.2em
+    &__form
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 10px
+        @include tabletDevice
+            flex-direction: row
+            align-items: baseline
+            gap: 0
+    &__input
+        max-width: 300px
+        padding: 6px 4px
+    &__button
+        padding: 6px 4px
+    &__section
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 10px
+        @include tabletDevice
+            flex-direction: row
+            align-items: baseline
+    &__hamburger
+        @include tabletDevice
+            display: none !important
+        &-element
+            display: block
+            margin: 3px 0
+            width: 30px
+            height: 5px
+            background: black
