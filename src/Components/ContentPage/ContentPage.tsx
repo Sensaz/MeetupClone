@@ -1,15 +1,15 @@
 import { Navigation } from "../Navigation/Navigation";
-import { CategoryCard } from "../Global/Cards/CategoryCard";
+import { CategoryCard } from "../Global";
 import { MeetupWorkCard } from "./MeetupWorkCard";
 import { NearGroups, NearEvents } from "../NearMeetup";
 import { popularCategory } from "../../assets";
-import online_events from "../../../public/online_events.svg";
-import handsUp from "../../../public/handsUp.svg";
-import joinGroup from "../../../public/joinGroup.svg";
-import ticket from "../../../public/ticket.svg";
-import category1 from "../../../public/category1.webp";
-import category2 from "../../../public/category2.webp";
-import category3 from "../../../public/category3.webp";
+import online_events from "/online_events.svg";
+import handsUp from "/handsUp.svg";
+import joinGroup from "/joinGroup.svg";
+import ticket from "/ticket.svg";
+import category1 from "/category1.webp";
+import category2 from "/category2.webp";
+import category3 from "/category3.webp";
 import "../../style/content-page.sass";
 
 export const ContentPage = () => {

@@ -1,14 +1,18 @@
 import { PopularGroupCard } from "../Global/Cards/PopularGroupCard";
 import { NearMeetupWrapper } from "./NearMeetupWrapper";
 import { nearGroupsObj } from "../../assets";
-import g1 from "../../../public/GroupIMG/g1.jpg";
-import g2 from "../../../public/GroupIMG/g2.jpg";
-import g3 from "../../../public/GroupIMG/g3.jpg";
-import g4 from "../../../public/GroupIMG/g4.jpg";
-import g5 from "../../../public/GroupIMG/g5.jpg";
-import g6 from "../../../public/GroupIMG/g6.jpg";
+import g1 from "/GroupIMG/g1.jpg";
+import g2 from "/GroupIMG/g2.jpg";
+import g3 from "/GroupIMG/g3.jpg";
+import g4 from "/GroupIMG/g4.jpg";
+import g5 from "/GroupIMG/g5.jpg";
+import g6 from "/GroupIMG/g6.jpg";
 
-const imgs = {
+type ImgsType = {
+  [key: string]: string;
+};
+
+const imgs: ImgsType = {
   g1,
   g2,
   g3,

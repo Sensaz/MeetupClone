@@ -2,14 +2,14 @@ import { NearMeetupWrapper } from "./NearMeetupWrapper";
 import { UpcomingEventCard } from "../Global/Cards/UpcomingEventCard";
 import { nearEventObj } from "../../assets";
 
-import event1 from "../../../public/EventIMG/event1.webp";
-import event2 from "../../../public/EventIMG/event2.webp";
-import event3 from "../../../public/EventIMG/event3.webp";
-import event4 from "../../../public/EventIMG/event4.webp";
-import event5 from "../../../public/EventIMG/event5.webp";
-import event6 from "../../../public/EventIMG/event6.webp";
-import event7 from "../../../public/EventIMG/event7.webp";
-import event8 from "../../../public/EventIMG/event8.webp";
+import event1 from "/EventIMG/event1.webp";
+import event2 from "/EventIMG/event2.webp";
+import event3 from "/EventIMG/event3.webp";
+import event4 from "/EventIMG/event4.webp";
+import event5 from "/EventIMG/event5.webp";
+import event6 from "/EventIMG/event6.webp";
+import event7 from "/EventIMG/event7.webp";
+import event8 from "/EventIMG/event8.webp";
 
 const eventsImg: Record<string, string> = {
   event1,
