@@ -1,0 +1,52 @@
+.upcomming-event-card
+    display: flex
+    flex-direction: column
+    max-width: 400px
+    min-width: 400px
+    &__img-wrapper
+        width: 100%
+        height: 200px
+        overflow: hidden
+    &__img
+        width: 100%
+    &__main
+        font-size: 12px
+    &__section
+        margin: 20px 0
+        width: 100%
+        overflow: hidden
+        text-overflow: ellipsis
+        &--participant
+            display: flex
+            align-items: center
+            justify-content: space-between
+    &__date
+        font-size: 12px
+    // &__event-title
+    &__event-description
+        white-space: nowrap
+        overflow: hidden
+    &__new-group
+        display: block
+        line-height: 300%
+    &__participant-icons
+        display: flex
+        align-items: center
+    &__participant-icon
+        position: relative
+        width: 40px
+        height: 40px
+        background-color: black
+        border-radius: 50%
+        z-index: 3
+        &--left
+            background: red
+            left: -15px
+            z-index: 2
+            &:nth-last-child(2)
+                background: blue
+                left: -30px
+                z-index: 1
+    // &__participants-number
+    &__share-icon
+        font-size: 20px
