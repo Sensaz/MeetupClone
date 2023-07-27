@@ -1,3 +1,15 @@
-import { popularCategory, nearGroupsObj, nearEventObj } from "./data";
+import {
+  categoryCards,
+  meetupWorkCards,
+  popularCategory,
+  nearGroupsObj,
+  nearEventObj,
+} from "./data";
 
-export { popularCategory, nearGroupsObj, nearEventObj };
+export {
+  categoryCards,
+  meetupWorkCards,
+  popularCategory,
+  nearGroupsObj,
+  nearEventObj,
+};

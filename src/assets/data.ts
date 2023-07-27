@@ -1,3 +1,48 @@
+export const categoryCards = [
+  {
+    id: 1,
+    text: "Nawiąż Nowe Znajomości",
+    alt: "Happy People",
+    src: "category1",
+  },
+  {
+    id: 2,
+    text: "Przeglądaj wydarzenia z kategorii aktywność na świeżym powietrzu",
+    alt: "Happy People",
+    src: "category2",
+  },
+  {
+    id: 3,
+    text: "Przyłącz się dzięki technologii",
+    alt: "Happy People",
+    src: "category3",
+  },
+];
+
+export const meetupWorkCards = [
+  {
+    id: 1,
+    title: "Dołącz do grupy",
+    text: "Rób to, co kochasz, poznawaj innych, którzy również to kochają i odnajdź swą społeczność. Reszta przejdzie do historii!",
+    alt: "Hands Up",
+    src: "handsUp",
+  },
+  {
+    id: 2,
+    title: "Utwórz grupę",
+    text: "Nie musisz byc ekspertem, aby zgromadzic osoby o wspolnych zainteresowaniach",
+    alt: "Join Group",
+    src: "joinGroup",
+  },
+  {
+    id: 3,
+    title: "Znajdź wydarzenie",
+    text: "Wydarzenia dotyczą niemal wszystkich możliwych tematów — od gier online po fotografię, jogę i wspinaczkę.",
+    alt: "Hands Up",
+    src: "ticket",
+  },
+];
+
 export const popularCategory: string[] = [
   "Rozwiń swoją Kariere",
   "Znajdź Zen",
