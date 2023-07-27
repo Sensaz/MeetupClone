@@ -2,7 +2,7 @@ import { Navigation } from "../Navigation/Navigation";
 import { CategoryCard } from "../Global";
 import { MeetupWorkCard } from "./MeetupWorkCard";
 import { NearGroups, NearEvents } from "../NearMeetup";
-import { popularCategory } from "../../assets";
+import { categoryCards, popularCategory, meetupWorkCards } from "../../assets";
 import online_events from "/online_events.svg";
 import handsUp from "/handsUp.svg";
 import joinGroup from "/joinGroup.svg";
@@ -11,6 +11,43 @@ import category1 from "/category1.webp";
 import category2 from "/category2.webp";
 import category3 from "/category3.webp";
 import "../../style/content-page.sass";
+
+type imgsObj = {
+  [key: string]: string;
+};
+
+const imgsMeetupWorkCardsJSX: imgsObj = {
+  handsUp,
+  joinGroup,
+  ticket,
+};
+
+const imgsForCategoryCardsJSX: imgsObj = {
+  category1,
+  category2,
+  category3,
+};
+
+const meetupWorkCardsJSX = meetupWorkCards.map(
+  ({ id, title, text, alt, src }) => (
+    <MeetupWorkCard
+      key={id}
+      title={title}
+      text={text}
+      alt={alt}
+      src={imgsMeetupWorkCardsJSX[src]}
+    />
+  )
+);
+
+const categoryCardsJSX = categoryCards.map(({ id, text, alt, src }) => (
+  <CategoryCard
+    key={id}
+    text={text}
+    alt={alt}
+    src={imgsForCategoryCardsJSX[src]}
+  />
+));
 
 export const ContentPage = () => {
   return (
@@ -43,21 +80,7 @@ export const ContentPage = () => {
         </article>
         <article className="content-page__article">
           <div className="content-page__article content-page__article--start">
-            <CategoryCard
-              text="Nawiąż Nowe Znajomości"
-              alt="Happy People"
-              src={category1}
-            />
-            <CategoryCard
-              text="Przeglądaj wydarzenia z kategorii aktywność na świeżym powietrzu"
-              alt="Happy People"
-              src={category2}
-            />
-            <CategoryCard
-              text="Przyłącz się dzięki technologii"
-              alt="Happy People"
-              src={category3}
-            />
+            {categoryCardsJSX}
           </div>
         </article>
         <article className="content-page__article">
@@ -79,25 +102,7 @@ export const ContentPage = () => {
           </header>
 
           <div className="content-page__article content-page__article--start">
-            <MeetupWorkCard
-              title="Dołącz do grupy"
-              text="Rób to, co kochasz, poznawaj innych, którzy również to kochają i odnajdź swą społeczność. Reszta przejdzie do historii!"
-              alt="Hands Up"
-              src={handsUp}
-            />
-
-            <MeetupWorkCard
-              title="Utwórz grupę"
-              text="Nie musisz byc ekspertem, aby zgromadzic osoby o wspolnych zainteresowaniach"
-              alt="Hands Up"
-              src={joinGroup}
-            />
-            <MeetupWorkCard
-              title="Znajdź wydarzenie"
-              text="Wydarzenia dotyczą niemal wszystkich możliwych tematów — od gier online po fotografię, jogę i wspinaczkę."
-              alt="Hands Up"
-              src={ticket}
-            />
+            {meetupWorkCardsJSX}
           </div>
         </article>
         <article className="content-page__article content-page__article--no-scroll">
