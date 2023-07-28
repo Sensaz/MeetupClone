@@ -1,42 +1,32 @@
-@mixin tabletDevice
-    @media screen and (min-width: 730px)
-        @content
-
-@mixin laptopDevice
-    @media screen and (min-width: 1200px)
-        @content
+@use './Global/mixins'
 
 .navigation
     width: 100%
     padding: 10px 0
     border-bottom: 2px solid black
     &__wrapper
-        display: flex
-        justify-content: space-between
-        align-items: baseline
+        @include mixins.flexCenter($justify: space-between, $align: baseline)
         width: 95%
         margin: 0 auto
     &__main
-        position: absolute
+        @include mixins.flexCenter($direction: column, $gap: 20px)
+        position: fixed
         left: 0
         top: 0
-        display: flex
-        flex-direction: column
-        gap: 20px
-        height: auto
         min-height: 100vh
         padding: 36px 8px
         background-color: #747e7e
         transform: translateX(-120%)
         transition: transform .3s linear
-        @include tabletDevice
-            background-color: transparent
-            align-items: flex-start
+        z-index: 10
+        @include mixins.tabletDevice
             position: relative
-            font-size: 12px
             min-height: auto
+            align-items: flex-start
+            font-size: 12px
+            background-color: transparent
             transform: translateX(0)
-            @include laptopDevice
+            @include mixins.laptopDevice
                 flex-direction: row
                 align-items: center
         &--show
@@ -44,33 +34,24 @@
     &__logo
         font-size: 1.2em
     &__form
-        display: flex
-        flex-direction: column
-        align-items: flex-start
-        gap: 10px
-        @include tabletDevice
-            flex-direction: row
-            align-items: baseline
-            gap: 0
+        @include mixins.flexCenter($direction: column, $align: flex-start, $gap: 10px)
+        @include mixins.tabletDevice
+            @include mixins.flexCenter($direction: row, $align: baseline, $gap: 0)
     &__input
         max-width: 300px
         padding: 6px 4px
     &__button
         padding: 6px 4px
     &__section
-        display: flex
-        flex-direction: column
-        align-items: flex-start
-        gap: 10px
-        @include tabletDevice
-            flex-direction: row
-            align-items: center
+        @include mixins.flexCenter($direction: column, $align: flex-start, $gap: 10px)
+        @include mixins.tabletDevice
+            @include mixins.flexCenter($direction: row, $align: center)
     &__hamburger
-        @include tabletDevice
+        @include mixins.tabletDevice
             display: none !important
         &-element
             display: block
-            margin: 3px 0
             width: 30px
             height: 5px
+            margin: 3px 0
             background: black
