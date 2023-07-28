@@ -4,6 +4,7 @@ import {
   popularCategory,
   nearGroupsObj,
   nearEventObj,
+  LoginPopUpButtons,
 } from "./data";
 
 export {
@@ -12,4 +13,5 @@ export {
   popularCategory,
   nearGroupsObj,
   nearEventObj,
+  LoginPopUpButtons,
 };
