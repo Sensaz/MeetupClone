@@ -188,3 +188,24 @@ export const nearEventObj = [
     isNewGroup: true,
   },
 ];
+
+export const LoginPopUpButtons = [
+  {
+    id: 1,
+    text: "Zaloguj za pomocą facebooka",
+    icon: "facebook",
+  },
+  { id: 2, text: "Zaloguj za pomocą google", icon: "google" },
+  { id: 3, text: "Zaloguj za pomocą apple", icon: "star is-transparent" },
+];
+
+export const RegisterPopUpButtons = [
+  {
+    id: 1,
+    text: " Kontynuuj za pomocą facebooka",
+    icon: "facebook",
+  },
+  { id: 2, text: "Kontynuuj za pomocą google", icon: "google" },
+  { id: 3, text: "Kontynuuj za pomocą apple", icon: "star is-transparent" },
+  { id: 4, text: "Kontynuuj za pomocą gmail", icon: "gmail" },
+];

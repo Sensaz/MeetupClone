@@ -1,6 +1,9 @@
 import { Portal } from "../Portal";
 import { Button } from "..";
+import { LoginPopUpButtons } from "../../../assets";
 import "../../../style/portal-children.sass";
+import classNames from "classnames";
+import { useMemo } from "react";
 
 type LoginPopUpType = {
   open: boolean;
@@ -13,6 +16,17 @@ export const LoginPopUp = ({
   handleOpen,
   handleOpenRegister,
 }: LoginPopUpType) => {
+  const buttonsSection = useMemo(
+    () =>
+      LoginPopUpButtons.map(({ id, text, icon }) => (
+        <Button key={id} className="portal-children__button">
+          <i className={classNames("nes-icon is-medium", icon)}></i>
+          {text}
+        </Button>
+      )),
+    []
+  );
+
   return (
     <Portal open={open} handleOpen={handleOpen}>
       <div className="portal-children">
@@ -58,20 +72,7 @@ export const LoginPopUp = ({
           <span className="portal-children__or">lub</span>
           <div className="portal-children__line" />
         </div>
-        <div className=" portal-children__buttons">
-          <Button className="portal-children__button">
-            <i className="nes-icon facebook is-medium"></i>
-            Zaloguj za pomocą facebooka
-          </Button>
-          <Button className="portal-children__button">
-            <i className="nes-icon google is-medium"></i>
-            Zaloguj za pomocą google
-          </Button>
-          <Button className="portal-children__button">
-            <i className="nes-icon is-medium star is-transparent"></i>
-            Zaloguj za pomocą apple
-          </Button>
-        </div>
+        <div className=" portal-children__buttons">{buttonsSection}</div>
       </div>
     </Portal>
   );
