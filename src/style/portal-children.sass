@@ -1,0 +1,44 @@
+@use './Global/mixins'
+
+.portal-children
+    display: flex
+    flex-direction: column
+    padding: 40px 0
+    gap: 30px
+    &__header
+        text-align: center
+    // &__title
+    // &__message
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 20px
+        order: 2
+        @include mixins.tabletDevice
+            order: 0
+    // &__field
+    &__label
+        display: flex !important
+        justify-content: space-between
+        &--link
+            text-align: right
+    &__or-wrapper
+        display: flex
+        align-items: center
+        order: 1
+        @include mixins.tabletDevice
+            order: 0
+    &__or
+        padding: 0 20px
+    &__line
+        height: 1px
+        background: black
+        flex-grow: 1
+    &__buttons
+        display: flex
+        flex-direction: column
+        gap: 20px
+    &__button
+        display: flex !important
+        align-items: center
+        justify-content: space-around
