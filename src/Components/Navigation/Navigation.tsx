@@ -2,7 +2,10 @@ import { useCallback, useState } from "react";
 import classNames from "classnames";
 import "../../style/navigation.sass";
 
-export const Navigation = () => {
+export const Navigation = ({
+  handleShowLoginPopUp,
+  handleShowRegisterPopUp,
+}) => {
   const [toggleModal, setToggleModal] = useState<boolean>(false);
 
   const handleToggleModal = useCallback(() => {
@@ -36,8 +39,18 @@ export const Navigation = () => {
               Nowa Grupa
             </a>
             <p>Polski</p>
-            <button className="navigation__button">Zaloguj</button>
-            <button className="navigation__button">Zarejestruj</button>
+            <button
+              onClick={handleShowLoginPopUp}
+              className="nes-btn navigation__button"
+            >
+              Zaloguj
+            </button>
+            <button
+              onClick={handleShowRegisterPopUp}
+              className="nes-btn navigation__button"
+            >
+              Zarejestruj
+            </button>
           </section>
         </main>
 
