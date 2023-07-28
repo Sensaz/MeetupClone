@@ -1,7 +1,18 @@
 import { Portal } from "../Portal";
+import { Button } from "..";
 import "../../../style/portal-children.sass";
 
-export const LoginPopUp = ({ open, handleOpen, handleOpenRegister }) => {
+type LoginPopUpType = {
+  open: boolean;
+  handleOpen: () => void;
+  handleOpenRegister: () => void;
+};
+
+export const LoginPopUp = ({
+  open,
+  handleOpen,
+  handleOpenRegister,
+}: LoginPopUpType) => {
   return (
     <Portal open={open} handleOpen={handleOpen}>
       <div className="portal-children">
@@ -40,7 +51,7 @@ export const LoginPopUp = ({ open, handleOpen, handleOpenRegister }) => {
             <input type="checkbox" className="nes-checkbox" />
             <span>Nie wylogowuj mnie</span>
           </label>
-          <button className="nes-btn">Zaloguj</button>
+          <Button>Zaloguj</Button>
         </form>
         <div className="portal-children__or-wrapper">
           <div className="portal-children__line" />
@@ -48,18 +59,18 @@ export const LoginPopUp = ({ open, handleOpen, handleOpenRegister }) => {
           <div className="portal-children__line" />
         </div>
         <div className=" portal-children__buttons">
-          <button className="nes-btn portal-children__button">
+          <Button className="portal-children__button">
             <i className="nes-icon facebook is-medium"></i>
             Zaloguj za pomocą facebooka
-          </button>
-          <button className="nes-btn portal-children__button">
+          </Button>
+          <Button className="portal-children__button">
             <i className="nes-icon google is-medium"></i>
             Zaloguj za pomocą google
-          </button>
-          <button className="nes-btn portal-children__button">
+          </Button>
+          <Button className="portal-children__button">
             <i className="nes-icon is-medium star is-transparent"></i>
             Zaloguj za pomocą apple
-          </button>
+          </Button>
         </div>
       </div>
     </Portal>

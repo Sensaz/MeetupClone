@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import ReactDOM from "react-dom";
+import { Button } from ".";
 import "../../style/portal.sass";
 type PopUpType = {
   open: boolean;
@@ -15,9 +16,7 @@ export function Portal({ open = false, handleOpen, children }: PopUpType) {
     <>
       <div className="overlay-poratl" />
       <div className="nes-dialog is-rounded portal">
-        <button onClick={handleOpen} className="nes-btn">
-          close
-        </button>
+        <Button click={handleOpen}>close</Button>
         <div>{children}</div>
       </div>
     </>,

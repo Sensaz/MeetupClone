@@ -1,7 +1,18 @@
 import { Portal } from "../Portal";
+import { Button } from "..";
 import "../../../style/portal-children.sass";
 
-export const RegisterPopUp = ({ open, handleOpen, handleOpenLogin }) => {
+type RegisterPopUpType = {
+  open: boolean;
+  handleOpen: () => void;
+  handleOpenLogin: () => void;
+};
+
+export const RegisterPopUp = ({
+  open,
+  handleOpen,
+  handleOpenLogin,
+}: RegisterPopUpType) => {
   return (
     <Portal open={open} handleOpen={handleOpen}>
       <div className="portal-children">
@@ -20,23 +31,23 @@ export const RegisterPopUp = ({ open, handleOpen, handleOpenLogin }) => {
             </a>
           </p>
         </header>
-        <div className=" portal-children__buttons">
-          <button className="nes-btn portal-children__button">
+        <div className="portal-children__buttons">
+          <Button className="portal-children__button">
             <i className="nes-icon facebook is-medium"></i>
             Kontynuuj za pomocą facebooka
-          </button>
-          <button className="nes-btn portal-children__button">
+          </Button>
+          <Button className="portal-children__button">
             <i className="nes-icon google is-medium"></i>
             Kontynuuj za pomocą google
-          </button>
-          <button className="nes-btn portal-children__button">
+          </Button>
+          <Button className="portal-children__button">
             <i className="nes-icon is-medium star is-transparent"></i>
             Kontynuuj za pomocą apple
-          </button>
-          <button className="nes-btn portal-children__button">
+          </Button>
+          <Button className="portal-children__button">
             <i className="nes-icon gmail is-medium"></i>
             Kontynuuj za pomocą gmail
-          </button>
+          </Button>
         </div>
       </div>
     </Portal>
