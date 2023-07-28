@@ -12,6 +12,11 @@ import category2 from "/category2.webp";
 import category3 from "/category3.webp";
 import "../../style/content-page.sass";
 
+import { RegisterPopUp } from "../Global/Authorized/RegisterPopUp";
+
+import { LoginPopUp } from "../Global/Authorized/LoginPopUp";
+import { useCallback, useState } from "react";
+
 type imgsObj = {
   [key: string]: string;
 };
@@ -50,9 +55,22 @@ const categoryCardsJSX = categoryCards.map(({ id, text, alt, src }) => (
 ));
 
 export const ContentPage = () => {
+  const [showLoginPopUp, setShowLoginPopUp] = useState(false);
+  const [showRegisterPopUp, setShowRegisterPopUp] = useState(false);
+
+  const handleShowLoginPopUp = useCallback(() => {
+    setShowLoginPopUp((prev) => !prev);
+  }, []);
+  const handleShowRegisterPopUp = useCallback(() => {
+    setShowRegisterPopUp((prev) => !prev);
+  }, []);
+
   return (
     <div className="content-page">
-      <Navigation />
+      <Navigation
+        handleShowLoginPopUp={handleShowLoginPopUp}
+        handleShowRegisterPopUp={handleShowRegisterPopUp}
+      />
       <main className="content-page__main nes-text is-disabled">
         <article className="content-page__article">
           <section className="content-page__section">
@@ -70,7 +88,11 @@ export const ContentPage = () => {
               Twoje hobby. Wydarzenia mają miejsce każdego dnia - zaloguj się i
               zacznij świetnie się bawić.
             </p>
-            <button type="button" className="nes-btn is-primary">
+            <button
+              onClick={handleShowRegisterPopUp}
+              type="button"
+              className="nes-btn is-primary"
+            >
               Dołącz
             </button>
           </section>
@@ -112,6 +134,16 @@ export const ContentPage = () => {
           <NearGroups />
         </article>
       </main>
+      <LoginPopUp
+        handleOpenRegister={handleShowRegisterPopUp}
+        handleOpen={handleShowLoginPopUp}
+        open={showLoginPopUp}
+      />
+      <RegisterPopUp
+        handleOpenLogin={handleShowLoginPopUp}
+        handleOpen={handleShowRegisterPopUp}
+        open={showRegisterPopUp}
+      />
     </div>
   );
 };

@@ -3,19 +3,24 @@ import ReactDOM from "react-dom";
 import "../../style/portal.sass";
 type PopUpType = {
   open: boolean;
+  handleOpen: () => void;
   children: ReactNode;
 };
 
-export default function Portal({ open = false, children }: PopUpType) {
-  if (!open) return;
+const portalElement = document.getElementById("portal");
+
+export function Portal({ open = false, handleOpen, children }: PopUpType) {
+  if (!open || !portalElement) return;
   return ReactDOM.createPortal(
     <>
       <div className="overlay-poratl" />
-      <div className="portal">
-        <button>close</button>
+      <div className="nes-dialog is-rounded portal">
+        <button onClick={handleOpen} className="nes-btn">
+          close
+        </button>
         <div>{children}</div>
       </div>
     </>,
-    document.getElementById("portal")
+    portalElement
   );
 }
