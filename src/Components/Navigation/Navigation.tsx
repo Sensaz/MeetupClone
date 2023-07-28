@@ -1,11 +1,17 @@
 import { useCallback, useState } from "react";
+import { Button } from "../Global";
 import classNames from "classnames";
 import "../../style/navigation.sass";
+
+type NavigationType = {
+  handleShowLoginPopUp: () => void;
+  handleShowRegisterPopUp: () => void;
+};
 
 export const Navigation = ({
   handleShowLoginPopUp,
   handleShowRegisterPopUp,
-}) => {
+}: NavigationType) => {
   const [toggleModal, setToggleModal] = useState<boolean>(false);
 
   const handleToggleModal = useCallback(() => {
@@ -32,36 +38,30 @@ export const Navigation = ({
               type="text"
               placeholder="Okolica, miasto"
             />
-            <button className="navigation__button  nes-btn">szukaj</button>
+            <Button className="navigation__button">szukaj</Button>
           </form>
           <section className="navigation__section">
             <a href="#" className="nes-text is-success">
               Nowa Grupa
             </a>
             <p>Polski</p>
-            <button
-              onClick={handleShowLoginPopUp}
-              className="nes-btn navigation__button"
-            >
+            <Button click={handleShowLoginPopUp} className="navigation__button">
               Zaloguj
-            </button>
-            <button
-              onClick={handleShowRegisterPopUp}
-              className="nes-btn navigation__button"
+            </Button>
+            <Button
+              click={handleShowRegisterPopUp}
+              className="navigation__button"
             >
               Zarejestruj
-            </button>
+            </Button>
           </section>
         </main>
 
-        <button
-          onClick={handleToggleModal}
-          className="navigation__hamburger nes-btn"
-        >
+        <Button click={handleToggleModal} className="navigation__hamburger">
           <span className="navigation__hamburger-element"></span>
           <span className="navigation__hamburger-element"></span>
           <span className="navigation__hamburger-element"></span>
-        </button>
+        </Button>
       </div>
     </nav>
   );

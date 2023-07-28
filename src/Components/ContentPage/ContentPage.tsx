@@ -1,8 +1,10 @@
-import { Navigation } from "../Navigation/Navigation";
-import { CategoryCard } from "../Global";
+import { useCallback, useState } from "react";
+import { Navigation } from "../Navigation";
+import { CategoryCard, RegisterPopUp, LoginPopUp, Button } from "../Global";
 import { MeetupWorkCard } from "./MeetupWorkCard";
 import { NearGroups, NearEvents } from "../NearMeetup";
 import { categoryCards, popularCategory, meetupWorkCards } from "../../assets";
+
 import online_events from "/online_events.svg";
 import handsUp from "/handsUp.svg";
 import joinGroup from "/joinGroup.svg";
@@ -11,11 +13,6 @@ import category1 from "/category1.webp";
 import category2 from "/category2.webp";
 import category3 from "/category3.webp";
 import "../../style/content-page.sass";
-
-import { RegisterPopUp } from "../Global/Authorized/RegisterPopUp";
-
-import { LoginPopUp } from "../Global/Authorized/LoginPopUp";
-import { useCallback, useState } from "react";
 
 type imgsObj = {
   [key: string]: string;
@@ -88,13 +85,9 @@ export const ContentPage = () => {
               Twoje hobby. Wydarzenia mają miejsce każdego dnia - zaloguj się i
               zacznij świetnie się bawić.
             </p>
-            <button
-              onClick={handleShowRegisterPopUp}
-              type="button"
-              className="nes-btn is-primary"
-            >
+            <Button click={handleShowRegisterPopUp} theme="primary">
               Dołącz
-            </button>
+            </Button>
           </section>
           <section className="content-page__section">
             <img src={online_events} alt="online_events" />
@@ -108,9 +101,9 @@ export const ContentPage = () => {
         <article className="content-page__article">
           <section className="content-page__section content-page__section--row-scroll">
             {popularCategory.map((category: string) => (
-              <button className="content-page__button nes-btn is-primary">
+              <Button theme="primary" className="content-page__button">
                 {category}
-              </button>
+              </Button>
             ))}
           </section>
         </article>
