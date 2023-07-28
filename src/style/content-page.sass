@@ -5,10 +5,8 @@
         width: 80vw
         margin: 60px auto
     &__article
-        display: flex
-        flex-direction: column
+        @include mixins.flexCenter($direction: column, $gap: 20px)
         width: 100%
-        gap: 20px
         margin: 50px 0
         overflow-x: auto
         &--no-scroll
@@ -19,7 +17,6 @@
             align-items: center
             &--start
                 align-items: flex-start
-            // &--row-scroll
             &--column
                 flex-direction: column
     &__section
@@ -30,8 +27,7 @@
             &--full
                 width: 100%
             &--row-scroll
+                @include mixins.flexCenter($align: center)
                 width: 100%
-                display: flex
-                align-items: center
-                overflow: auto
                 white-space: nowrap
+                overflow: auto

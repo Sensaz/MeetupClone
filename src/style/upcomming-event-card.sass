@@ -1,8 +1,9 @@
+@use './Global/mixins'
+
 .upcomming-event-card
-    display: flex
-    flex-direction: column
-    max-width: 400px
+    @include mixins.flexCenter($direction: column)
     min-width: 400px
+    max-width: 400px
     &__img-wrapper
         width: 100%
         height: 200px
@@ -12,14 +13,12 @@
     &__main
         font-size: 12px
     &__section
-        margin: 20px 0
         width: 100%
+        margin: 20px 0
         overflow: hidden
         text-overflow: ellipsis
         &--participant
-            display: flex
-            align-items: center
-            justify-content: space-between
+            @include mixins.flexCenter($align: center, $justify: space-between)
     &__date
         font-size: 12px
     // &__event-title
@@ -30,8 +29,7 @@
         display: block
         line-height: 300%
     &__participant-icons
-        display: flex
-        align-items: center
+        @include mixins.flexCenter($align: center)
     &__participant-icon
         position: relative
         width: 40px
@@ -40,12 +38,12 @@
         border-radius: 50%
         z-index: 3
         &--left
-            background: red
             left: -15px
+            background: red
             z-index: 2
             &:nth-last-child(2)
-                background: blue
                 left: -30px
+                background: blue
                 z-index: 1
     // &__participants-number
     &__share-icon

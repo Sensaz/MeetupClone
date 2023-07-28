@@ -1,16 +1,15 @@
+@use './Global/mixins'
+
 .popular-group-card
-    display: flex
-    flex-direction: column
-    padding: 15px
-    gap: 15px
-    border: 3px solid black
+    @include mixins.flexCenter($direction: column, $gap: 15px)
     min-width: 450px
     max-width: 450px
     min-height: 250px
     max-height: 250px
+    padding: 15px
+    border: 3px solid black
     &__header
-        display: flex
-        gap: 30px
+        @include mixins.flexCenter($gap: 30px)
     // &__img-wrapper
     &__img
         width: 70px
@@ -25,9 +24,7 @@
         height: 2px
         background: black
     &__main
-        display: flex
-        flex-direction: column
-        gap: 10px
+        @include mixins.flexCenter($direction: column, $gap: 10px)
     &__event-date
         font-size: 12px
     &__event-desc
