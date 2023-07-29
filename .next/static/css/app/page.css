@@ -1,0 +1,466 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/category-card.sass ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.category-card {
+  width: 100%;
+}
+@media screen and (min-width: 730px) {
+  .category-card {
+    width: 30%;
+  }
+}
+.category-card:hover .category-card__img-wrapper {
+  filter: grayscale(0.4);
+}
+.category-card:hover .category-card__text {
+  color: #1e9ced;
+}
+.category-card__img-wrapper {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  transition: 0.1s filter linear;
+}
+.category-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.category-card__text {
+  font-size: 12px;
+  transition: 0.2s color linear;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/popular-group-card.sass ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.popular-group-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 450px;
+  max-width: 450px;
+  min-height: 250px;
+  max-height: 250px;
+  padding: 15px;
+  border: 3px solid black;
+}
+.popular-group-card__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 30px;
+}
+.popular-group-card__img {
+  width: 70px;
+  height: 70px;
+}
+.popular-group-card__new-group {
+  color: red;
+}
+.popular-group-card__group-name {
+  font-size: 16px;
+}
+.popular-group-card__hr {
+  width: 100%;
+  height: 2px;
+  background: black;
+}
+.popular-group-card__main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 10px;
+}
+.popular-group-card__event-date {
+  font-size: 12px;
+}
+.popular-group-card__event-desc {
+  font-size: 14px;
+}
+.popular-group-card__lack-event {
+  font-size: 16px;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/upcomming-event-card.sass ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.upcomming-event-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 0;
+  min-width: 400px;
+  max-width: 400px;
+}
+.upcomming-event-card__img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.upcomming-event-card__img {
+  width: 100%;
+}
+.upcomming-event-card__main {
+  font-size: 12px;
+}
+.upcomming-event-card__section {
+  width: 100%;
+  margin: 20px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.upcomming-event-card__section--participant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+.upcomming-event-card__date {
+  font-size: 12px;
+}
+.upcomming-event-card__event-description {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.upcomming-event-card__new-group {
+  display: block;
+  line-height: 300%;
+}
+.upcomming-event-card__participant-icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+.upcomming-event-card__participant-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 3;
+}
+.upcomming-event-card__participant-icon--left {
+  left: -15px;
+  background: red;
+  z-index: 2;
+}
+.upcomming-event-card__participant-icon--left:nth-last-child(2) {
+  left: -30px;
+  background: blue;
+  z-index: 1;
+}
+.upcomming-event-card__share-icon {
+  font-size: 20px;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/portal.sass ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.overlay-poratl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(56, 56, 56, 0.4);
+  z-index: 1000;
+}
+
+.portal {
+  position: fixed;
+  max-height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFF;
+  padding: 50px;
+  z-index: 1001;
+  overflow: auto !important;
+}
+@media screen and (min-width: 730px) {
+  .portal {
+    width: 80vw;
+  }
+}
+@media screen and (min-width: 730px) and (min-width: 1200px) {
+  .portal {
+    max-width: 50vw;
+  }
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/portal-children.sass ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.portal-children {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+  gap: 30px;
+}
+.portal-children__header {
+  text-align: center;
+}
+.portal-children__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  order: 2;
+}
+@media screen and (min-width: 730px) {
+  .portal-children__form {
+    order: 0;
+  }
+}
+.portal-children__label {
+  display: flex !important;
+  justify-content: space-between;
+}
+.portal-children__label--link {
+  text-align: right;
+}
+.portal-children__or-wrapper {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+@media screen and (min-width: 730px) {
+  .portal-children__or-wrapper {
+    order: 0;
+  }
+}
+.portal-children__or {
+  padding: 0 20px;
+}
+.portal-children__line {
+  height: 1px;
+  background: black;
+  flex-grow: 1;
+}
+.portal-children__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.portal-children__button {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/navigation.sass ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.navigation {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid black;
+}
+.navigation__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+  gap: 0;
+  width: 95%;
+  margin: 0 auto;
+}
+.navigation__main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  padding: 36px 8px;
+  background-color: #747e7e;
+  transform: translateX(-120%);
+  transition: transform 0.3s linear;
+  z-index: 10;
+}
+@media screen and (min-width: 730px) {
+  .navigation__main {
+    position: relative;
+    min-height: auto;
+    align-items: flex-start;
+    font-size: 12px;
+    background-color: transparent;
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 730px) and (min-width: 1200px) {
+  .navigation__main {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.navigation__main--show {
+  transform: translateX(0);
+}
+.navigation__logo {
+  font-size: 1.2em;
+}
+.navigation__form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 730px) {
+  .navigation__form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: row;
+    gap: 0;
+  }
+}
+.navigation__input {
+  max-width: 300px;
+  padding: 6px 4px;
+}
+.navigation__button {
+  padding: 6px 4px;
+}
+.navigation__section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 730px) {
+  .navigation__section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0;
+  }
+}
+@media screen and (min-width: 730px) {
+  .navigation__hamburger {
+    display: none !important;
+  }
+}
+.navigation__hamburger-element {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin: 3px 0;
+  background: black;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/meetup-work-card.sass ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.meetup-work-card {
+  min-width: 300px;
+}
+.meetup-work-card__img-wrapper {
+  width: 100%;
+}
+.meetup-work-card__img {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+.meetup-work-card__header {
+  text-align: center;
+}
+.meetup-work-card__text {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/near-meetup-wrapper.sass ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.near-meetup-wrapper {
+  width: 80vw;
+}
+.near-meetup-wrapper__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 0;
+}
+.near-meetup-wrapper__link {
+  text-align: right;
+}
+.near-meetup-wrapper__main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  overflow-x: auto;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./src/style/content-page.sass ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.content-page__main {
+  width: 80vw;
+  margin: 60px auto;
+}
+.content-page__article {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 50px 0;
+  overflow-x: auto;
+}
+.content-page__article--no-scroll {
+  overflow-x: hidden;
+}
+@media screen and (min-width: 730px) {
+  .content-page__article {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content-page__article--start {
+    align-items: flex-start;
+  }
+  .content-page__article--column {
+    flex-direction: column;
+  }
+}
+.content-page__section {
+  width: 100%;
+}
+@media screen and (min-width: 730px) {
+  .content-page__section {
+    width: 45%;
+    margin: 0;
+  }
+  .content-page__section--full {
+    width: 100%;
+  }
+  .content-page__section--row-scroll {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: auto;
+  }
+}
+.content-page__img {
+  width: 100%;
+}

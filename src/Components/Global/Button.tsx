@@ -23,7 +23,6 @@ export const Button = ({
   className = "",
   click,
 }: ButtonType) => {
-  console.log(THEMES[theme]);
   return (
     <button
       onClick={click}

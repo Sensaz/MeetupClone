@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "../../../style/upcomming-event-card.sass";
 
 type UpcomingEventCardType = {
@@ -20,7 +21,7 @@ export const UpcomingEventCard = ({
   return (
     <div className="upcomming-event-card">
       <div className="upcomming-event-card__img-wrapper">
-        <img src={src} alt={alt} className="upcomming-event-card__img" />
+        <Image src={src} alt={alt} className="upcomming-event-card__img" />
       </div>
       <main className="upcomming-event-card__main">
         <header className="upcomming-event-card__section">

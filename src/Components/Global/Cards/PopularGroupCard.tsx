@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "../../../style/popular-group-card.sass";
 
 type PopularGroupCardType = {
@@ -21,7 +22,7 @@ export const PopularGroupCard = ({
     <div className="popular-group-card">
       <header className="popular-group-card__header">
         <div className="popular-group-card__img-wrapper">
-          <img className="popular-group-card__img" src={src} alt={alt} />
+          <Image className="popular-group-card__img" src={src} alt={alt} />
         </div>
         <div className="popular-group-card__group-info">
           {isNewGroup && (

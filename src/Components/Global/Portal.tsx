@@ -1,25 +1,33 @@
-import { ReactNode } from "react";
-import ReactDOM from "react-dom";
 import { Button } from ".";
 import "../../style/portal.sass";
-type PopUpType = {
+
+import { useRef, useEffect, ReactNode } from "react";
+import { createPortal } from "react-dom";
+
+interface PortalProps {
   open: boolean;
   handleOpen: () => void;
   children: ReactNode;
-};
-
-const portalElement = document.getElementById("portal");
-
-export function Portal({ open = false, handleOpen, children }: PopUpType) {
-  if (!open || !portalElement) return;
-  return ReactDOM.createPortal(
-    <>
-      <div className="overlay-poratl" />
-      <div className="nes-dialog is-rounded portal">
-        <Button click={handleOpen}>close</Button>
-        <div>{children}</div>
-      </div>
-    </>,
-    portalElement
-  );
 }
+
+export const Portal = ({ open = false, handleOpen, children }: PortalProps) => {
+  const ref = useRef<Element | null>(null);
+
+  useEffect(() => {
+    ref.current = document.querySelector<HTMLElement>("#portal");
+  }, []);
+
+  return open && ref.current
+    ? createPortal(
+        <div>
+          {" "}
+          <div className="overlay-poratl" />
+          <div className="nes-dialog is-rounded portal">
+            <Button click={handleOpen}>close</Button>
+            <div>{children}</div>
+          </div>
+        </div>,
+        ref.current
+      )
+    : null;
+};
