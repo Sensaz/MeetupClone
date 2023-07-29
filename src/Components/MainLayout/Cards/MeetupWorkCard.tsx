@@ -1,10 +1,10 @@
-import Image from "next/image";
-import "../style/meetup-work-card.sass";
+import Image, { StaticImageData } from "next/image";
+import "../../../style/meetup-work-card.sass";
 
 type MeetupWorkCardType = {
   title: string;
   text: string;
-  src: string;
+  src: StaticImageData;
   alt: string;
 };
 

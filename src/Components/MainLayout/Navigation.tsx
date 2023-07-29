@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
-import { Button } from "./Global";
+import { Button } from "../Global";
 import classNames from "classnames";
-import "../style/navigation.sass";
+import "../../style/navigation.sass";
 
 type NavigationType = {
   handleShowLoginPopUp: () => void;
