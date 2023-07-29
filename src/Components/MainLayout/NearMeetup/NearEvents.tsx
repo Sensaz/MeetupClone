@@ -1,6 +1,6 @@
 import { NearMeetupWrapper } from "./NearMeetupWrapper";
-import { UpcomingEventCard } from "../Global/Cards/UpcomingEventCard";
-import { nearEventObj } from "../../assets";
+import { UpcomingEventCard } from "../Cards/UpcomingEventCard";
+import { nearEventObj } from "../../../assets";
 
 import event1 from "/public/EventIMG/event1.webp";
 import event2 from "/public/EventIMG/event2.webp";
@@ -10,8 +10,9 @@ import event5 from "/public/EventIMG/event5.webp";
 import event6 from "/public/EventIMG/event6.webp";
 import event7 from "/public/EventIMG/event7.webp";
 import event8 from "/public/EventIMG/event8.webp";
+import { StaticImageData } from "next/image";
 
-const eventsImg: Record<string, string> = {
+const eventsImg: Record<string, StaticImageData> = {
   event1,
   event2,
   event3,

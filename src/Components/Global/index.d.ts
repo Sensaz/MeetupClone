@@ -1,4 +1,8 @@
-import { CategoryCard, PopularGroupCard, UpcomingEventCard } from "./Cards";
+import {
+  CategoryCard,
+  PopularGroupCard,
+  UpcomingEventCard,
+} from "../MainLayout/Cards";
 import { LoginPopUp, RegisterPopUp } from "./Authorized";
 import { Button } from "./Button";
 

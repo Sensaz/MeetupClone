@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import "../../../style/upcomming-event-card.sass";
 
 type UpcomingEventCardType = {
-  src: string;
+  src: StaticImageData;
   alt: string;
   date: string;
   title: string;

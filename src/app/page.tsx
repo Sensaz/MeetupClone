@@ -1,16 +1,19 @@
 "use client";
 import { useCallback, useState } from "react";
-import { Navigation } from "../components/Navigation";
+import Image, { StaticImageData } from "next/image";
+
+import { categoryCards, popularCategory, meetupWorkCards } from "../assets";
+
 import {
   CategoryCard,
   RegisterPopUp,
   LoginPopUp,
   Button,
-} from "../components/Global";
-import { MeetupWorkCard } from "../components/MeetupWorkCard";
-import { NearGroups, NearEvents } from "../components/NearMeetup";
-import { categoryCards, popularCategory, meetupWorkCards } from "../assets";
-import Image from "next/image";
+  MeetupWorkCard,
+  NearGroups,
+  NearEvents,
+  Navigation,
+} from "../components";
 
 import online_events from "/public/online_events.svg";
 import handsUp from "/public/handsUp.svg";
@@ -22,7 +25,7 @@ import category3 from "/public/category3.webp";
 import "../style/content-page.sass";
 
 type imgsObj = {
-  [key: string]: string;
+  [key: string]: StaticImageData;
 };
 
 const imgsMeetupWorkCardsJSX: imgsObj = {

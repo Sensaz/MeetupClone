@@ -1,8 +1,8 @@
 import "../../../style/category-card.sass";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 type CategoryCardType = {
   text: string;
-  src: string;
+  src: StaticImageData;
   alt: string;
 };
 

@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import "../../../style/popular-group-card.sass";
 
 type PopularGroupCardType = {
-  src: string;
+  src: StaticImageData;
   alt: string;
   isNewGroup: boolean;
   groupName: string;
