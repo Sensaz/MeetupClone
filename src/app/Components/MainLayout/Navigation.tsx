@@ -1,10 +1,13 @@
 "use client";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { Button } from "../Global";
 import classNames from "classnames";
 import "../../../style/navigation.sass";
+import { GlobalContext } from "@/app/GlobalContextProvider";
 
 export const Navigation = () => {
+  const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
+    useContext(GlobalContext);
   const [toggleHamburger, setToggleHamburger] = useState<boolean>(false);
   const handleToggleHamburger = useCallback(() => {
     setToggleHamburger((prev) => !prev);
@@ -39,13 +42,13 @@ export const Navigation = () => {
               </a>
               <p>Polski</p>
               <Button
-                click={handleShowLoginPopUp}
+                click={handleToggleLoginPopUp}
                 className="navigation__button"
               >
                 Zaloguj
               </Button>
               <Button
-                click={handleShowRegisterPopUp}
+                click={handleToggleRegisterPopUp}
                 className="navigation__button"
               >
                 Zarejestruj

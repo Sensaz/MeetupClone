@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../style/index.sass";
 import { LoginPopUp, RegisterPopUp } from "@/app/Components";
+import { GlobalContextProvider } from "./GlobalContextProvider";
 
 export const metadata: Metadata = {
   title: "Meetup Clone",
@@ -12,30 +13,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [showLoginPopUp, setShowLoginPopUp] = useState(false);
-  const [showRegisterPopUp, setShowRegisterPopUp] = useState(false);
-
-  const handleShowLoginPopUp = useCallback(() => {
-    setShowLoginPopUp((prev) => !prev);
-  }, []);
-  const handleShowRegisterPopUp = useCallback(() => {
-    setShowRegisterPopUp((prev) => !prev);
-  }, []);
-
   return (
     <html lang="pl">
       <body>
-        {children}
-        <LoginPopUp
-          handleOpenRegister={handleShowRegisterPopUp}
-          handleOpen={handleShowLoginPopUp}
-          open={showLoginPopUp}
-        />
-        <RegisterPopUp
-          handleOpenLogin={handleShowLoginPopUp}
-          handleOpen={handleShowRegisterPopUp}
-          open={showRegisterPopUp}
-        />
+        <GlobalContextProvider>
+          {children}
+          <LoginPopUp />
+          <RegisterPopUp />
+        </GlobalContextProvider>
         <div id="portal" />
       </body>
     </html>
