@@ -1,11 +1,12 @@
 "use client";
-import { Portal } from "../Portal";
-import { Button } from "..";
-import { RegisterPopUpButtons } from "../../../../assets/data";
-import "../../../../style/portal-children.sass";
+
 import classNames from "classnames";
 import { useContext, useMemo } from "react";
+import { Portal } from "../Portal";
+import { Button } from "../Button";
+import { RegisterPopUpButtons } from "../../../../assets/data";
 import { GlobalContext } from "@/app/GlobalContextProvider";
+import "../../../../style/portal-children.sass";
 
 export const RegisterPopUp = () => {
   const {
