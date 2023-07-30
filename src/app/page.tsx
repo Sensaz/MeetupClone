@@ -5,6 +5,7 @@ import { categoryCards, popularCategory, meetupWorkCards } from "../assets";
 import {
   CategoryCard,
   Button,
+  AuthButton,
   MeetupWorkCard,
   NearGroups,
   NearEvents,
@@ -78,7 +79,9 @@ export default function Home() {
               Twoje hobby. Wydarzenia mają miejsce każdego dnia - zaloguj się i
               zacznij świetnie się bawić.
             </p>
-            <Button theme="primary">Dołącz</Button>
+            <AuthButton auth="register" theme="primary">
+              Dołącz
+            </AuthButton>
           </section>
           <section className="content-page__section">
             <Image

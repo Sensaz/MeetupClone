@@ -1,4 +1,3 @@
-import { Navigation } from "./Navigation";
 import { NearEvents, NearGroups, NearMeetupWrapper } from "./NearMeetup";
 import {
   CategoryCard,
@@ -8,7 +7,6 @@ import {
 } from "./Cards";
 
 export {
-  Navigation,
   NearEvents,
   NearGroups,
   NearMeetupWrapper,
