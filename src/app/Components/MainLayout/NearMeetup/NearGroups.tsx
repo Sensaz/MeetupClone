@@ -1,6 +1,6 @@
 import { PopularGroupCard } from "../Cards/PopularGroupCard";
 import { NearMeetupWrapper } from "./NearMeetupWrapper";
-import { nearGroupsObj } from "../../../assets";
+import { nearGroupsObj } from "../../../../assets";
 import g1 from "/public/GroupIMG/g1.jpg";
 import g2 from "/public/GroupIMG/g2.jpg";
 import g3 from "/public/GroupIMG/g3.jpg";

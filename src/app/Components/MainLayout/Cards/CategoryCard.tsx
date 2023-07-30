@@ -1,4 +1,4 @@
-import "../../../style/category-card.sass";
+import "../../../../style/category-card.sass";
 import Image, { StaticImageData } from "next/image";
 type CategoryCardType = {
   text: string;
