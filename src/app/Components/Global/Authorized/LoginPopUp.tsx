@@ -1,21 +1,17 @@
+"use client";
+
 import { Portal } from "../Portal";
 import { Button } from "..";
 import { LoginPopUpButtons } from "../../../../assets";
 import "../../../../style/portal-children.sass";
 import classNames from "classnames";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
+import { GlobalContext } from "@/app/GlobalContextProvider";
 
-type LoginPopUpType = {
-  open: boolean;
-  handleOpen: () => void;
-  handleOpenRegister: () => void;
-};
+export const LoginPopUp = () => {
+  const { showLoginPopUp, handleToggleLoginPopUp, handleToggleRegisterPopUp } =
+    useContext(GlobalContext);
 
-export const LoginPopUp = ({
-  open,
-  handleOpen,
-  handleOpenRegister,
-}: LoginPopUpType) => {
   const buttonsSection = useMemo(
     () =>
       LoginPopUpButtons.map(({ id, text, icon }) => (
@@ -28,7 +24,7 @@ export const LoginPopUp = ({
   );
 
   return (
-    <Portal open={open} handleOpen={handleOpen}>
+    <Portal open={showLoginPopUp} handleOpen={handleToggleLoginPopUp}>
       <div className="portal-children">
         <header className="portal-children__header">
           <h2 className="portal-children__title">Zaloguj się</h2>
@@ -37,8 +33,8 @@ export const LoginPopUp = ({
             <a
               href="#"
               onClick={() => {
-                handleOpen();
-                handleOpenRegister();
+                handleToggleLoginPopUp();
+                handleToggleRegisterPopUp();
               }}
             >
               Zapisz się
