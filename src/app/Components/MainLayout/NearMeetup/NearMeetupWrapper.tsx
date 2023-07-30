@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "../../../style/near-meetup-wrapper.sass";
+import "../../../../style/near-meetup-wrapper.sass";
 
 type NearMeetupWrapperType = {
   title: string;

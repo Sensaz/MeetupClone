@@ -1,7 +1,7 @@
 import { Portal } from "../Portal";
 import { Button } from "..";
-import { LoginPopUpButtons } from "../../../assets";
-import "../../../style/portal-children.sass";
+import { LoginPopUpButtons } from "../../../../assets";
+import "../../../../style/portal-children.sass";
 import classNames from "classnames";
 import { useMemo } from "react";
 

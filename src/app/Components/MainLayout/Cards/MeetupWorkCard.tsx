@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import "../../../style/meetup-work-card.sass";
+import "../../../../style/meetup-work-card.sass";
 
 type MeetupWorkCardType = {
   title: string;

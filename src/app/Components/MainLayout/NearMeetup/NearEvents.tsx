@@ -1,6 +1,6 @@
 import { NearMeetupWrapper } from "./NearMeetupWrapper";
 import { UpcomingEventCard } from "../Cards/UpcomingEventCard";
-import { nearEventObj } from "../../../assets";
+import { nearEventObj } from "../../../../assets";
 
 import event1 from "/public/EventIMG/event1.webp";
 import event2 from "/public/EventIMG/event2.webp";

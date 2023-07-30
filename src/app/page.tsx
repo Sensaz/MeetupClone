@@ -1,19 +1,15 @@
-"use client";
-import { useCallback, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
 import { categoryCards, popularCategory, meetupWorkCards } from "../assets";
 
 import {
   CategoryCard,
-  RegisterPopUp,
-  LoginPopUp,
   Button,
   MeetupWorkCard,
   NearGroups,
   NearEvents,
   Navigation,
-} from "../components";
+} from "./Components";
 
 import online_events from "/public/online_events.svg";
 import handsUp from "/public/handsUp.svg";
@@ -62,22 +58,9 @@ const categoryCardsJSX = categoryCards.map(({ id, text, alt, src }) => (
 ));
 
 export default function Home() {
-  const [showLoginPopUp, setShowLoginPopUp] = useState(false);
-  const [showRegisterPopUp, setShowRegisterPopUp] = useState(false);
-
-  const handleShowLoginPopUp = useCallback(() => {
-    setShowLoginPopUp((prev) => !prev);
-  }, []);
-  const handleShowRegisterPopUp = useCallback(() => {
-    setShowRegisterPopUp((prev) => !prev);
-  }, []);
-
   return (
     <div className="content-page">
-      <Navigation
-        handleShowLoginPopUp={handleShowLoginPopUp}
-        handleShowRegisterPopUp={handleShowRegisterPopUp}
-      />
+      <Navigation />
       <main className="content-page__main nes-text is-disabled">
         <article className="content-page__article">
           <section className="content-page__section">
@@ -95,9 +78,7 @@ export default function Home() {
               Twoje hobby. Wydarzenia mają miejsce każdego dnia - zaloguj się i
               zacznij świetnie się bawić.
             </p>
-            <Button click={handleShowRegisterPopUp} theme="primary">
-              Dołącz
-            </Button>
+            <Button theme="primary">Dołącz</Button>
           </section>
           <section className="content-page__section">
             <Image
@@ -141,16 +122,6 @@ export default function Home() {
           <NearGroups />
         </article>
       </main>
-      <LoginPopUp
-        handleOpenRegister={handleShowRegisterPopUp}
-        handleOpen={handleShowLoginPopUp}
-        open={showLoginPopUp}
-      />
-      <RegisterPopUp
-        handleOpenLogin={handleShowLoginPopUp}
-        handleOpen={handleShowRegisterPopUp}
-        open={showRegisterPopUp}
-      />
     </div>
   );
 }

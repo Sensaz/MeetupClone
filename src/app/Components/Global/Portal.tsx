@@ -1,5 +1,6 @@
+"use client";
 import { Button } from ".";
-import "../../style/portal.sass";
+import "../../../style/portal.sass";
 
 import { useRef, useEffect, ReactNode } from "react";
 import { createPortal } from "react-dom";
