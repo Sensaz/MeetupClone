@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import classNames from "classnames";
 
@@ -21,7 +23,7 @@ export const Button = ({
   children,
   theme = "normal",
   className = "",
-  click,
+  click = () => null,
 }: ButtonType) => {
   return (
     <button
