@@ -1,6 +1,5 @@
-import { LoginPopUp, RegisterPopUp, Button } from "./Global";
+import { LoginPopUp, RegisterPopUp, Button, AuthButton } from "./Global";
 import {
-  Navigation,
   NearEvents,
   NearGroups,
   NearMeetupWrapper,
@@ -9,6 +8,8 @@ import {
   UpcomingEventCard,
   MeetupWorkCard,
 } from "./MainLayout";
+
+import { Navigation } from "./Navigation";
 
 export {
   LoginPopUp,
@@ -22,4 +23,5 @@ export {
   PopularGroupCard,
   UpcomingEventCard,
   MeetupWorkCard,
+  AuthButton,
 };

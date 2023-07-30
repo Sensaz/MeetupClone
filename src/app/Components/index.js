@@ -1,4 +1,4 @@
-import { LoginPopUp, RegisterPopUp, Button } from "./Global";
+import { LoginPopUp, RegisterPopUp, Button, AuthButton } from "./Global";
 import {
   Navigation,
   NearEvents,
@@ -22,4 +22,5 @@ export {
   PopularGroupCard,
   UpcomingEventCard,
   MeetupWorkCard,
+  AuthButton,
 };
