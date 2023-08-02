@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Navigation } from "@/app/Components";
+import { Navigation } from "@/app/components";
 import { ReactNode } from "react";
+import "../../style/content-page.sass";
 
 export const metadata: Metadata = {
   title: "Meetup Clone",
@@ -11,12 +12,13 @@ type FindLayoutProp = {
   children: ReactNode;
 };
 
-export default function FindLayout({ children }: FindLayoutProp) {
+export default async function FindLayout({ children }: FindLayoutProp) {
   return (
-    <div>
+    <div className="content-page">
       <Navigation />
-      elo
-      {children}
+      <main className="content-page__main nes-text is-disabled">
+        {children}
+      </main>
     </div>
   );
 }

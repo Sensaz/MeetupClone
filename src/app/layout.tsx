@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../style/index.sass";
-import { LoginPopUp, RegisterPopUp } from "@/app/Components";
+import { LoginPopUp, RegisterPopUp } from "@/app/components";
 import { GlobalContextProvider } from "./GlobalContextProvider";
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Created by Me ;D",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;

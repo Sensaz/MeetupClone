@@ -10,7 +10,7 @@ import {
   NearGroups,
   NearEvents,
   Navigation,
-} from "./Components";
+} from "./components";
 
 import online_events from "/public/online_events.svg";
 import handsUp from "/public/handsUp.svg";
@@ -38,13 +38,14 @@ const imgsForCategoryCardsJSX: imgsObj = {
 };
 
 const meetupWorkCardsJSX = meetupWorkCards.map(
-  ({ id, title, text, alt, src }) => (
+  ({ id, title, text, alt, src, path }) => (
     <MeetupWorkCard
       key={id}
       title={title}
       text={text}
       alt={alt}
       src={imgsMeetupWorkCardsJSX[src]}
+      path={path}
     />
   )
 );
