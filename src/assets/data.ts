@@ -26,6 +26,7 @@ export const meetupWorkCards = [
     text: "Rób to, co kochasz, poznawaj innych, którzy również to kochają i odnajdź swą społeczność. Reszta przejdzie do historii!",
     alt: "Hands Up",
     src: "handsUp",
+    path: "/find?source=GROUPS",
   },
   {
     id: 2,
@@ -40,6 +41,7 @@ export const meetupWorkCards = [
     text: "Wydarzenia dotyczą niemal wszystkich możliwych tematów — od gier online po fotografię, jogę i wspinaczkę.",
     alt: "Hands Up",
     src: "ticket",
+    path: "/find?source=EVENTS",
   },
 ];
 

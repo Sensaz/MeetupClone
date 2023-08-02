@@ -4,6 +4,7 @@ import { Button } from "../Global";
 import classNames from "classnames";
 import "../../../style/navigation.sass";
 import { GlobalContext } from "@/app/GlobalContextProvider";
+import Link from "next/link";
 
 export const Navigation = () => {
   const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
@@ -17,7 +18,9 @@ export const Navigation = () => {
     <>
       <nav className="nes-text is-primary navigation">
         <div className="navigation__wrapper">
-          <h1 className="navigation__logo">Logo</h1>
+          <Link href="/">
+            <h1 className="navigation__logo">Logo</h1>
+          </Link>
           <main
             className={classNames("navigation__main", {
               "navigation__main--show": toggleHamburger,
