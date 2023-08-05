@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import DropDown from "./dropdown/DropDown";
-import { eventsNearMeetupSortsSetup } from "../../../assets";
+import { eventsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { EventCard } from "./Cards";
 

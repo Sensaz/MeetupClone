@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../style/index.sass";
+import "@/style/index.sass";
 import { LoginPopUp, RegisterPopUp } from "@/app/components";
 import { GlobalContextProvider } from "./GlobalContextProvider";
 

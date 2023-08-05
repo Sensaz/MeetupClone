@@ -3,9 +3,9 @@ import classNames from "classnames";
 import { useContext, useMemo } from "react";
 import { Portal } from "../Portal";
 import { Button } from "../Button";
-import { LoginPopUpButtons } from "../../../../assets";
+import { LoginPopUpButtons } from "@/assets";
 import { GlobalContext } from "@/app/GlobalContextProvider";
-import "../../../../style/portal-children.sass";
+import "@/style/portal-children.sass";
 
 export const LoginPopUp = () => {
   const { showLoginPopUp, handleToggleLoginPopUp, handleToggleRegisterPopUp } =

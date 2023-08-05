@@ -2,7 +2,7 @@
 import { useCallback, useContext, useState } from "react";
 import { Button } from "../Global";
 import classNames from "classnames";
-import "../../../style/navigation.sass";
+import "@/style/navigation.sass";
 import { GlobalContext } from "@/app/GlobalContextProvider";
 import Link from "next/link";
 
