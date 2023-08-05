@@ -43,7 +43,7 @@ export const Navigation = () => {
               <a href="#" className="nes-text is-success">
                 Nowa Grupa
               </a>
-              <p>Polski</p>
+              {/* <p>Polski</p> */}
               <Button
                 click={handleToggleLoginPopUp}
                 className="navigation__button"
