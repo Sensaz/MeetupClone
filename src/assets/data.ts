@@ -211,3 +211,220 @@ export const RegisterPopUpButtons = [
   { id: 3, text: "Kontynuuj za pomocą apple", icon: "star is-transparent" },
   { id: 4, text: "Kontynuuj za pomocą gmail", icon: "gmail" },
 ];
+
+type SelectOption = {
+  id: number;
+  selectText: string;
+  value: string;
+};
+
+type SortSetup = {
+  id: string;
+  title: string;
+  clickFunctionName: string;
+  clickFunctionIsOpen: string;
+  content: SelectOption[];
+};
+
+export const groupsNearMeetupSortsSetup: SortSetup[] = [
+  {
+    id: "groupsNearMeetupSortsSetup1",
+    title: "Dowolna odległość",
+    clickFunctionName: "handleGroupsKilometersSort",
+    clickFunctionIsOpen: "groupsKilometersSort",
+    content: [
+      { id: 2, selectText: "5 kilometrów", value: "5 kilometers" },
+      { id: 3, selectText: "10 kilometrów", value: "10 kilometers" },
+      { id: 4, selectText: "25 kilometrów", value: "25 kilometers" },
+      { id: 5, selectText: "50 kilometrów", value: "50 kilometers" },
+      { id: 6, selectText: "100 kilometrów", value: "100 kilometers" },
+      { id: 7, selectText: "150 kilometrów", value: "150 kilometers" },
+    ],
+  },
+  {
+    id: "groupsNearMeetupSortsSetup2",
+    title: "Dowolna kategoria",
+    clickFunctionName: "handleGroupsCategorySort",
+    clickFunctionIsOpen: "groupsCategorySort",
+    content: [
+      { id: 2, selectText: "Nowe grupy", value: "New groups" },
+      {
+        id: 3,
+        selectText: "Aktywizm i polityka",
+        value: "Activism and politics",
+      },
+      { id: 4, selectText: "Działania społeczne", value: "Social actions" },
+      { id: 5, selectText: "Gry", value: "Games" },
+      { id: 6, selectText: "Hobby i pasje", value: "Hobbies and interests" },
+      {
+        id: 7,
+        selectText: "Język i tożsamość",
+        value: "Language and identity",
+      },
+      { id: 8, selectText: "Kariera i biznes", value: "Career and business" },
+      { id: 9, selectText: "Muzyka", value: "Music" },
+      {
+        id: 10,
+        selectText: "Nauki i edukacja",
+        value: "Science and education",
+      },
+      {
+        id: 11,
+        selectText: "Podróże i spędzanie czasu na świeżym powietrzu",
+        value: "Travel and outdoor activities",
+      },
+      {
+        id: 12,
+        selectText: "Religia i duchowość",
+        value: "Religion and spirituality",
+      },
+      {
+        id: 13,
+        selectText: "Rodzicielstwo i rodzina",
+        value: "Parenting and family",
+      },
+      {
+        id: 14,
+        selectText: "Społeczność i środowisko",
+        value: "Community and environment",
+      },
+      { id: 15, selectText: "Sporty i fitness", value: "Sports and fitness" },
+      { id: 16, selectText: "Sztuka i kultura", value: "Art and culture" },
+      { id: 17, selectText: "Taniec", value: "Dance" },
+      { id: 18, selectText: "Technologia", value: "Technology" },
+      { id: 19, selectText: "Twórcze pisanie", value: "Creative writing" },
+      {
+        id: 20,
+        selectText: "Wsparcie i coaching",
+        value: "Support and coaching",
+      },
+      {
+        id: 21,
+        selectText: "Zdrowie i dobre samopoczucie",
+        value: "Health and well-being",
+      },
+      { id: 22, selectText: "Zwierzęta", value: "Animals" },
+    ],
+  },
+];
+
+export const eventsNearMeetupSortsSetup: SortSetup[] = [
+  {
+    id: "eventsNearMeetupSortsSetup1",
+    title: "Wszystkie dni",
+    clickFunctionName: "handleEventsDatSort",
+    clickFunctionIsOpen: "eventsDaySort",
+    content: [
+      { id: 1, selectText: "Wszystkie dni", value: "" },
+      { id: 2, selectText: "Rozpoczynające się wkrótce", value: "" },
+      { id: 3, selectText: "Dzisiaj", value: "" },
+      { id: 4, selectText: "Jutro", value: "" },
+      { id: 5, selectText: "W tym tygodniu", value: "" },
+      { id: 6, selectText: "W ten weekend", value: "" },
+      { id: 7, selectText: "W następnym tygodniu", value: "" },
+      { id: 7, selectText: "Niestandardowe", value: "" },
+    ],
+  },
+  {
+    id: "eventsNearMeetupSortsSetup2",
+    title: "Dowolny typ",
+    clickFunctionName: "handleEventsTypeSort",
+    clickFunctionIsOpen: "eventsTypeSort",
+    content: [
+      { id: 1, selectText: "Online", value: "" },
+      { id: 2, selectText: "Z dowolnym udziałem osobistym", value: "" },
+      { id: 3, selectText: "Z udziałem osobistym tylko wewnątrz", value: "" },
+      {
+        id: 4,
+        selectText: "Z udziałem osobistym tylko na zewnątrz",
+        value: "",
+      },
+    ],
+  },
+  {
+    id: "eventsNearMeetupSortsSetup3",
+    title: "Dowolna odległośc",
+    clickFunctionName: "handleEventsKilometersSort",
+    clickFunctionIsOpen: "eventsKilometersSort",
+    content: [
+      { id: 2, selectText: "5 kilometrów", value: "5 kilometers" },
+      { id: 3, selectText: "10 kilometrów", value: "10 kilometers" },
+      { id: 4, selectText: "25 kilometrów", value: "25 kilometers" },
+      { id: 5, selectText: "50 kilometrów", value: "50 kilometers" },
+      { id: 6, selectText: "100 kilometrów", value: "100 kilometers" },
+      { id: 7, selectText: "150 kilometrów", value: "150 kilometers" },
+    ],
+  },
+  {
+    id: "eventsNearMeetupSortsSetup4",
+    title: "Dowolna kategoria",
+    clickFunctionName: "handleEventsCategorySort",
+    clickFunctionIsOpen: "eventsCategorySort",
+    content: [
+      { id: 2, selectText: "Nowe grupy", value: "New groups" },
+      {
+        id: 3,
+        selectText: "Aktywizm i polityka",
+        value: "Activism and politics",
+      },
+      { id: 4, selectText: "Działania społeczne", value: "Social actions" },
+      { id: 5, selectText: "Gry", value: "Games" },
+      { id: 6, selectText: "Hobby i pasje", value: "Hobbies and interests" },
+      {
+        id: 7,
+        selectText: "Język i tożsamość",
+        value: "Language and identity",
+      },
+      { id: 8, selectText: "Kariera i biznes", value: "Career and business" },
+      { id: 9, selectText: "Muzyka", value: "Music" },
+      {
+        id: 10,
+        selectText: "Nauki i edukacja",
+        value: "Science and education",
+      },
+      {
+        id: 11,
+        selectText: "Podróże i spędzanie czasu na świeżym powietrzu",
+        value: "Travel and outdoor activities",
+      },
+      {
+        id: 12,
+        selectText: "Religia i duchowość",
+        value: "Religion and spirituality",
+      },
+      {
+        id: 13,
+        selectText: "Rodzicielstwo i rodzina",
+        value: "Parenting and family",
+      },
+      {
+        id: 14,
+        selectText: "Społeczność i środowisko",
+        value: "Community and environment",
+      },
+      { id: 15, selectText: "Sporty i fitness", value: "Sports and fitness" },
+      { id: 16, selectText: "Sztuka i kultura", value: "Art and culture" },
+      { id: 17, selectText: "Taniec", value: "Dance" },
+      { id: 18, selectText: "Technologia", value: "Technology" },
+      { id: 19, selectText: "Twórcze pisanie", value: "Creative writing" },
+      {
+        id: 20,
+        selectText: "Wsparcie i coaching",
+        value: "Support and coaching",
+      },
+      {
+        id: 21,
+        selectText: "Zdrowie i dobre samopoczucie",
+        value: "Health and well-being",
+      },
+      { id: 22, selectText: "Zwierzęta", value: "Animals" },
+    ],
+  },
+  {
+    id: "eventsNearMeetupSortsSetup5",
+    title: "Sortuj według: Trafnośc",
+    clickFunctionName: "handleEventsSort",
+    clickFunctionIsOpen: "eventsSort",
+    content: [{ id: 2, selectText: "Sortuj według: Data", value: "" }],
+  },
+];

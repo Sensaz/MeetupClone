@@ -5,6 +5,8 @@ import {
   nearGroupsObj,
   nearEventObj,
   LoginPopUpButtons,
+  groupsNearMeetupSortsSetup,
+  eventsNearMeetupSortsSetup,
 } from "./data";
 
 export {
@@ -14,4 +16,6 @@ export {
   nearGroupsObj,
   nearEventObj,
   LoginPopUpButtons,
+  groupsNearMeetupSortsSetup,
+  eventsNearMeetupSortsSetup,
 };

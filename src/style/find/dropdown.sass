@@ -1,0 +1,30 @@
+.dropdown
+    position: relative
+    &__wrapper
+        display: flex
+        gap: 30px
+        width: 100%
+        height: 400px
+        overflow-x: scroll
+        &::-webkit-scrollbar
+            display: none
+    &__button
+        background: none
+        color: #fff
+        border: 3px solid white
+        padding: 1em 3em 1em 1em
+        min-width: 300px
+        width: fit-content
+        white-space: nowrap
+    &__menu
+        position: absolute
+        max-height: 300px
+        list-style-type: none
+        background: #1a1a1a
+        padding: 10px
+        overflow: auto
+        z-index: 20
+    &__item
+        padding: 10px
+        &:hover
+            color: white
