@@ -22,17 +22,18 @@ export function GroupCard({}: Props) {
           <strong className="group-card__city">NEW MILFORD, NJ</strong>
           <p className="group-card__description">
             New Milford Running Group Welcome New Milford Runners! This group is
-            {/* about gathering people who want to be active in running. This run
-          group inspires people and challenges limits through the sport of
-          running. Any paces and distances are welcome! I started this to find
-          people who want to be in a running group—having a running group
-          motivates others. The goal is to do a 5k race during the fall! A
-          casual, supportive, and positive environment for running with
-          opportunities every day of the week — and members represent all levels
-          of the running spectrum, regardless of running pace. Beginner, casual,
-          and experienced runners looking to meet new people and get some
-          exercise! This group is casual, not competitive; we must respect other
-          personal running time. We are always beginner friendly. */}
+            about gathering people who want to be active in running. This run
+            group inspires people and challenges limits through the sport of
+            running. Any paces and distances are welcome! I started this to find
+            people who want to be in a running group—having a running group
+            motivates others. The goal is to do a 5k race during the fall! A
+            casual, supportive, and positive environment for running with
+            opportunities every day of the week — and members represent all
+            levels of the running spectrum, regardless of running pace.
+            Beginner, casual, and experienced runners looking to meet new people
+            and get some exercise! This group is casual, not competitive; we
+            must respect other personal running time. We are always beginner
+            friendly.
           </p>
         </section>
       </main>

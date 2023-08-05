@@ -1,3 +1,11 @@
+%text-truncate
+    max-width: 100%
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 2
+    overflow: hidden
+    text-overflow: ellipsis
+
 .group-card
     display: flex
     flex-direction: column
@@ -23,15 +31,19 @@
     &__section
         display: flex
         flex-direction: column
+        width: 60%
     &__is-new-group
         font-size: 12px
         line-height: 250%
     &__group-name
+        @extend %text-truncate
         font-size: 15px
     &__city
+        @extend %text-truncate
         font-size: 12px
         color: #ff8644
     &__description
+        @extend %text-truncate
         font-size: 12px
         margin-top: 10px
     &__info
