@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import event from "@/../public/EventCardIMG/event.webp";
+import event from "/public/EventCardIMG/event.webp";
 import "@/style/find/event-card.sass";
 
 type Props = {};

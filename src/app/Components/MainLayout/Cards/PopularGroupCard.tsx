@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import "../../../../style/popular-group-card.sass";
+import "@/style/popular-group-card.sass";
 
 type PopularGroupCardType = {
   src: StaticImageData;

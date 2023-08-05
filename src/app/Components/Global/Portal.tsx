@@ -2,7 +2,7 @@
 import { useRef, useEffect, ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "./Button";
-import "../../../style/portal.sass";
+import "@/style/portal.sass";
 
 interface PortalProps {
   open: boolean;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Navigation } from "@/app/components";
 import { ReactNode } from "react";
-import "../../style/content-page.sass";
+import "@/style/content-page.sass";
 
 export const metadata: Metadata = {
   title: "Meetup Clone",

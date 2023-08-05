@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 import { EventsPage, GroupsPage } from "./components";
 import Link from "next/link";
 import classNames from "classnames";
-import "../../style/find/near-meetups-page.sass";
+import "@/style/find/near-meetups-page.sass";
 
 export default function FindPage() {
   const searchParams = useSearchParams();

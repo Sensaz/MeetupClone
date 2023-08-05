@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 
-import { categoryCards, popularCategory, meetupWorkCards } from "../assets";
+import { categoryCards, popularCategory, meetupWorkCards } from "@/assets";
 
 import {
   CategoryCard,
@@ -19,7 +19,7 @@ import ticket from "/public/ticket.svg";
 import category1 from "/public/category1.webp";
 import category2 from "/public/category2.webp";
 import category3 from "/public/category3.webp";
-import "../style/content-page.sass";
+import "@/style/content-page.sass";
 
 type imgsObj = {
   [key: string]: StaticImageData;
