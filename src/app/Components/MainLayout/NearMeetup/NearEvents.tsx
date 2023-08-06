@@ -52,7 +52,7 @@ export const NearEvents = () => {
     <NearMeetupWrapper
       title="Nadchodzące wydarzenia"
       linkText="Znajdź więcej spotkań"
-      path="#"
+      path="/find?source=EVENTS"
     >
       {nearEventsMap}
     </NearMeetupWrapper>

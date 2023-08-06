@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import "@/style/near-meetup-wrapper.sass";
+import Link from "next/link";
 
 type NearMeetupWrapperType = {
   title: string;
@@ -18,9 +19,9 @@ export const NearMeetupWrapper = ({
     <div className="near-meetup-wrapper">
       <header className="near-meetup-wrapper__header">
         <h3 className="near-meetup-wrapper__title">{title}</h3>
-        <a className="near-meetup-wrapper__link" href={path}>
+        <Link className="near-meetup-wrapper__link" href={path}>
           {linkText}
-        </a>
+        </Link>
       </header>
       <main className="near-meetup-wrapper__main">{children}</main>
     </div>
