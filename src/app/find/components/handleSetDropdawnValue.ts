@@ -5,10 +5,12 @@ type PrevValueType = {
 export const handleSetDropdawnValue = (
   setState: React.Dispatch<React.SetStateAction<PrevValueType>>,
   toChange: string,
-  value: string
+  value: string,
+  whichDropdawnIsOpen: string
 ) => {
   setState((prevValue) => ({
     ...prevValue,
     [toChange]: value,
+    [whichDropdawnIsOpen]: false,
   }));
 };

@@ -31,8 +31,17 @@ export default function EventsPage() {
         clickObj={clickObj}
         isOpenObj={eventsSort}
         nearMeetupSorts={eventsNearMeetupSortsSetup}
-        handleSetDropdawnValue={(toChange: string, value: string) =>
-          handleSetDropdawnValue(setEventsSort, toChange, value)
+        handleSetDropdawnValue={(
+          toChange: string,
+          value: string,
+          whichDropdawnIsOpen: string
+        ) =>
+          handleSetDropdawnValue(
+            setEventsSort,
+            toChange,
+            value,
+            whichDropdawnIsOpen
+          )
         }
       />
       <article

@@ -21,7 +21,11 @@ interface Props {
   nearMeetupSorts: SortSetup[];
   clickObj: { [key: string]: () => void };
   isOpenObj: { [key: string]: boolean | string };
-  handleSetDropdawnValue: (toChange: string, value: string) => void;
+  handleSetDropdawnValue: (
+    toChange: string,
+    value: string,
+    whichDropdawnIsOpen: string
+  ) => void;
 }
 
 const DropDown = ({
@@ -58,6 +62,7 @@ const DropDown = ({
                 <DropDownItem
                   handleSetDropdawnValue={handleSetDropdawnValue}
                   toChange={clickFunctionIsValue}
+                  whichDropdawnIsOpen={clickFunctionIsOpen}
                   key={id}
                 >
                   {selectText}
