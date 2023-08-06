@@ -4,12 +4,13 @@ import DropDown from "./dropdown/DropDown";
 import { eventsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { EventCard } from "./Cards";
+import { handleSetDropdawnValue } from "./handleSetDropdawnValue";
 import classNames from "classnames";
 
 type SortType = string;
 
 type StateType = {
-  [key in SortType]: boolean;
+  [key in SortType]: boolean | string;
 };
 
 export default function EventsPage() {
@@ -30,6 +31,9 @@ export default function EventsPage() {
         clickObj={clickObj}
         isOpenObj={eventsSort}
         nearMeetupSorts={eventsNearMeetupSortsSetup}
+        handleSetDropdawnValue={(toChange: string, value: string) =>
+          handleSetDropdawnValue(setEventsSort, toChange, value)
+        }
       />
       <article
         className={classNames("near-meetups-page__article", {

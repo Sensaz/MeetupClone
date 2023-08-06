@@ -19,7 +19,7 @@ type DataType = {
 };
 
 type StateType = {
-  [key: string]: boolean;
+  [key: string]: boolean | string;
 };
 
 type setStateType = Dispatch<SetStateAction<StateType>>;
@@ -33,7 +33,9 @@ export const useClickObjectCreator = (
       ((key: string) => {
         setState((prevState) => ({
           ...Object.fromEntries(
-            Object.keys(prevState).map((key) => [key, false])
+            Object.keys(prevState).map((key) =>
+              key.includes("Sort") ? [key, false] : [key, prevState[key]]
+            )
           ),
           [key]: !prevState[key],
         }));

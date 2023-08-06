@@ -5,11 +5,12 @@ import { groupsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { GroupCard } from "./Cards";
 import classNames from "classnames";
+import { handleSetDropdawnValue } from "./handleSetDropdawnValue";
 
 type SortType = string;
 
 type StateType = {
-  [key in SortType]: boolean;
+  [key in SortType]: boolean | string;
 };
 
 export default function GroupsPage() {
@@ -22,12 +23,16 @@ export default function GroupsPage() {
   const hasTrueValue = Object.values(groupsSort).some(
     (value) => value === true
   );
+
   return (
     <>
       <DropDown
         clickObj={clickObj}
         isOpenObj={groupsSort}
         nearMeetupSorts={groupsNearMeetupSortsSetup}
+        handleSetDropdawnValue={(toChange: string, value: string) =>
+          handleSetDropdawnValue(setGroupsSort, toChange, value)
+        }
       />
       <article
         className={classNames("near-meetups-page__article", {
