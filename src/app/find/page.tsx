@@ -19,30 +19,32 @@ export default function FindPage() {
 
   return (
     <div className="near-meetups-page">
-      <h1 className="near-meetups-page__header">
-        {search === "GROUPS" ? "Grupy w pobliżu" : "Wydarzenia w pobliżu"}
-      </h1>
-      <div className="near-meetups-page__swap-links">
-        <Link
-          className={classNames("nes-text nes-pointer", {
-            "is-disabled": search === "GROUPS",
-          })}
-          href="?source=EVENTS"
-        >
-          Wydarzenia
-        </Link>
-        <Link
-          className={classNames("nes-text nes-pointer", {
-            "is-disabled": search === "EVENTS",
-          })}
-          href="?source=GROUPS"
-        >
-          Grupy
-        </Link>
-      </div>
-      <div className="near-meetups-page__main">
+      <section className="near-meetups-page__section near-meetups-page__section--color">
+        <h1 className="near-meetups-page__header">
+          {search === "GROUPS" ? "Grupy w pobliżu" : "Wydarzenia w pobliżu"}
+        </h1>
+        <div className="near-meetups-page__swap-links">
+          <Link
+            className={classNames("nes-text nes-pointer", {
+              "is-disabled": search === "GROUPS",
+            })}
+            href="?source=EVENTS"
+          >
+            Wydarzenia
+          </Link>
+          <Link
+            className={classNames("nes-text nes-pointer", {
+              "is-disabled": search === "EVENTS",
+            })}
+            href="?source=GROUPS"
+          >
+            Grupy
+          </Link>
+        </div>
+      </section>
+      {/* <div className="near-meetups-page__main"> */}
         {search === "GROUPS" ? <GroupsPage /> : <EventsPage />}
-      </div>
+      {/* </div> */}
     </div>
   );
 }

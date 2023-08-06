@@ -6,7 +6,11 @@ import "@/style/navigation.sass";
 import { GlobalContext } from "@/app/GlobalContextProvider";
 import Link from "next/link";
 
-export const Navigation = () => {
+type Props = {
+  sticky: boolean;
+};
+
+export const Navigation = ({ sticky }: Props) => {
   const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
     useContext(GlobalContext);
   const [toggleHamburger, setToggleHamburger] = useState<boolean>(false);
@@ -16,7 +20,11 @@ export const Navigation = () => {
 
   return (
     <>
-      <nav className="nes-text is-primary navigation">
+      <nav
+        className={classNames("nes-text", "is-primary", "navigation", {
+          navigation__sticky: sticky,
+        })}
+      >
         <div className="navigation__wrapper">
           <Link href="/">
             <h1 className="navigation__logo">Logo</h1>

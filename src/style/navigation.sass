@@ -4,6 +4,11 @@
     width: 100%
     padding: 10px 0
     border-bottom: 2px solid black
+    &__sticky
+        position: sticky
+        top: 0px
+        background: #222425
+        z-index: 5
     &__wrapper
         @include mixins.flexCenter($justify: space-between, $align: baseline)
         width: 95%

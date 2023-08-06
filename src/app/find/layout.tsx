@@ -15,7 +15,7 @@ type FindLayoutProp = {
 export default async function FindLayout({ children }: FindLayoutProp) {
   return (
     <div className="content-page">
-      <Navigation />
+      <Navigation sticky={true} />
       <main className="content-page__main nes-text is-disabled">
         {children}
       </main>
