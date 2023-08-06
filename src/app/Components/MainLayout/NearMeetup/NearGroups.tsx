@@ -42,7 +42,7 @@ export const NearGroups = () => {
       <NearMeetupWrapper
         title="Popularne Grupy"
         linkText="Znajdź więcej grup"
-        path="#"
+        path="/find?source=GROUPS"
       >
         {popularGroups}
       </NearMeetupWrapper>
