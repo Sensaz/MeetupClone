@@ -223,6 +223,7 @@ type SortSetup = {
   title: string;
   clickFunctionName: string;
   clickFunctionIsOpen: string;
+  clickFunctionIsValue: string;
   content: SelectOption[];
 };
 
@@ -232,6 +233,7 @@ export const groupsNearMeetupSortsSetup: SortSetup[] = [
     title: "Dowolna odległość",
     clickFunctionName: "handleGroupsKilometersSort",
     clickFunctionIsOpen: "groupsKilometersSort",
+    clickFunctionIsValue: "groupsKilometersValue",
     content: [
       { id: 2, selectText: "5 kilometrów", value: "5 kilometers" },
       { id: 3, selectText: "10 kilometrów", value: "10 kilometers" },
@@ -246,6 +248,7 @@ export const groupsNearMeetupSortsSetup: SortSetup[] = [
     title: "Dowolna kategoria",
     clickFunctionName: "handleGroupsCategorySort",
     clickFunctionIsOpen: "groupsCategorySort",
+    clickFunctionIsValue: "groupsCategoryValue",
     content: [
       { id: 2, selectText: "Nowe grupy", value: "New groups" },
       {
@@ -314,6 +317,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     title: "Wszystkie dni",
     clickFunctionName: "handleEventsDatSort",
     clickFunctionIsOpen: "eventsDaySort",
+    clickFunctionIsValue: "eventsDayValue",
     content: [
       { id: 1, selectText: "Wszystkie dni", value: "" },
       { id: 2, selectText: "Rozpoczynające się wkrótce", value: "" },
@@ -322,7 +326,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
       { id: 5, selectText: "W tym tygodniu", value: "" },
       { id: 6, selectText: "W ten weekend", value: "" },
       { id: 7, selectText: "W następnym tygodniu", value: "" },
-      { id: 7, selectText: "Niestandardowe", value: "" },
+      { id: 8, selectText: "Niestandardowe", value: "" },
     ],
   },
   {
@@ -330,6 +334,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     title: "Dowolny typ",
     clickFunctionName: "handleEventsTypeSort",
     clickFunctionIsOpen: "eventsTypeSort",
+    clickFunctionIsValue: "eventsTypeValue",
     content: [
       { id: 1, selectText: "Online", value: "" },
       { id: 2, selectText: "Z dowolnym udziałem osobistym", value: "" },
@@ -346,13 +351,14 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     title: "Dowolna odległośc",
     clickFunctionName: "handleEventsKilometersSort",
     clickFunctionIsOpen: "eventsKilometersSort",
+    clickFunctionIsValue: "eventsKilometersValue",
     content: [
-      { id: 2, selectText: "5 kilometrów", value: "5 kilometers" },
-      { id: 3, selectText: "10 kilometrów", value: "10 kilometers" },
-      { id: 4, selectText: "25 kilometrów", value: "25 kilometers" },
-      { id: 5, selectText: "50 kilometrów", value: "50 kilometers" },
-      { id: 6, selectText: "100 kilometrów", value: "100 kilometers" },
-      { id: 7, selectText: "150 kilometrów", value: "150 kilometers" },
+      { id: 2, selectText: "5 kilometrów", value: "5-kilometers" },
+      { id: 3, selectText: "10 kilometrów", value: "10-kilometers" },
+      { id: 4, selectText: "25 kilometrów", value: "25-kilometers" },
+      { id: 5, selectText: "50 kilometrów", value: "50-kilometers" },
+      { id: 6, selectText: "100 kilometrów", value: "100-kilometers" },
+      { id: 7, selectText: "150 kilometrów", value: "150-kilometers" },
     ],
   },
   {
@@ -360,6 +366,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     title: "Dowolna kategoria",
     clickFunctionName: "handleEventsCategorySort",
     clickFunctionIsOpen: "eventsCategorySort",
+    clickFunctionIsValue: "eventsCategoryValue",
     content: [
       { id: 2, selectText: "Nowe grupy", value: "New groups" },
       {
@@ -425,6 +432,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     title: "Sortuj według: Trafnośc",
     clickFunctionName: "handleEventsSort",
     clickFunctionIsOpen: "eventsSort",
+    clickFunctionIsValue: "eventsValue",
     content: [{ id: 2, selectText: "Sortuj według: Data", value: "" }],
   },
 ];
