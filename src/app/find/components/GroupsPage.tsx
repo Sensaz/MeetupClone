@@ -30,8 +30,17 @@ export default function GroupsPage() {
         clickObj={clickObj}
         isOpenObj={groupsSort}
         nearMeetupSorts={groupsNearMeetupSortsSetup}
-        handleSetDropdawnValue={(toChange: string, value: string) =>
-          handleSetDropdawnValue(setGroupsSort, toChange, value)
+        handleSetDropdawnValue={(
+          toChange: string,
+          value: string,
+          whichDropdawnIsOpen: string
+        ) =>
+          handleSetDropdawnValue(
+            setGroupsSort,
+            toChange,
+            value,
+            whichDropdawnIsOpen
+          )
         }
       />
       <article
