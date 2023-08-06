@@ -1,24 +1,24 @@
 interface MyComponentProps {
   children: string;
-  handleSetDropdawnValue: (
+  handleSetDropdownValue: (
     toChange: string,
     value: string,
-    whichDropdawnIsOpen: string
+    whichDropdownIsOpen: string
   ) => void;
   toChange: string;
-  whichDropdawnIsOpen: string;
+  whichDropdownIsOpen: string;
 }
 
 const DropDownItem = ({
   children,
-  handleSetDropdawnValue,
+  handleSetDropdownValue,
   toChange,
-  whichDropdawnIsOpen,
+  whichDropdownIsOpen,
 }: MyComponentProps) => {
   return (
     <li
       onClick={() =>
-        handleSetDropdawnValue(toChange, children, whichDropdawnIsOpen)
+        handleSetDropdownValue(toChange, children, whichDropdownIsOpen)
       }
       className="dropdown__item"
     >

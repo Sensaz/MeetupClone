@@ -21,10 +21,10 @@ interface Props {
   nearMeetupSorts: SortSetup[];
   clickObj: { [key: string]: () => void };
   isOpenObj: { [key: string]: boolean | string };
-  handleSetDropdawnValue: (
+  handleSetDropdownValue: (
     toChange: string,
     value: string,
-    whichDropdawnIsOpen: string
+    whichDropdownIsOpen: string
   ) => void;
 }
 
@@ -32,7 +32,7 @@ const DropDown = ({
   nearMeetupSorts,
   clickObj,
   isOpenObj,
-  handleSetDropdawnValue,
+  handleSetDropdownValue,
 }: Props) => {
   const dropdownList = nearMeetupSorts.map(
     ({
@@ -60,9 +60,9 @@ const DropDown = ({
             <ul className="dropdown__menu">
               {content.map(({ id, selectText }) => (
                 <DropDownItem
-                  handleSetDropdawnValue={handleSetDropdawnValue}
+                  handleSetDropdownValue={handleSetDropdownValue}
                   toChange={clickFunctionIsValue}
-                  whichDropdawnIsOpen={clickFunctionIsOpen}
+                  whichDropdownIsOpen={clickFunctionIsOpen}
                   key={id}
                 >
                   {selectText}

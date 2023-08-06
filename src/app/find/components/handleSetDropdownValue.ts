@@ -2,15 +2,15 @@ type PrevValueType = {
   [key: string]: boolean | string;
 };
 
-export const handleSetDropdawnValue = (
+export const handleSetDropdownValue = (
   setState: React.Dispatch<React.SetStateAction<PrevValueType>>,
   toChange: string,
   value: string,
-  whichDropdawnIsOpen: string
+  whichDropdownIsOpen: string
 ) => {
   setState((prevValue) => ({
     ...prevValue,
     [toChange]: value,
-    [whichDropdawnIsOpen]: false,
+    [whichDropdownIsOpen]: false,
   }));
 };

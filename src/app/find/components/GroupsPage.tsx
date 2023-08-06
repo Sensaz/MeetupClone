@@ -5,7 +5,7 @@ import { groupsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { GroupCard } from "./Cards";
 import classNames from "classnames";
-import { handleSetDropdawnValue } from "./handleSetDropdawnValue";
+import { handleSetDropdownValue } from "./handleSetDropdownValue";
 
 type SortType = string;
 
@@ -30,16 +30,16 @@ export default function GroupsPage() {
         clickObj={clickObj}
         isOpenObj={groupsSort}
         nearMeetupSorts={groupsNearMeetupSortsSetup}
-        handleSetDropdawnValue={(
+        handleSetDropdownValue={(
           toChange: string,
           value: string,
-          whichDropdawnIsOpen: string
+          whichDropdownIsOpen: string
         ) =>
-          handleSetDropdawnValue(
+          handleSetDropdownValue(
             setGroupsSort,
             toChange,
             value,
-            whichDropdawnIsOpen
+            whichDropdownIsOpen
           )
         }
       />
