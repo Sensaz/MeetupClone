@@ -1,6 +1,5 @@
 import { LoginPopUp, RegisterPopUp, Button, AuthButton } from "./Global";
 import {
-  Navigation,
   NearEvents,
   NearGroups,
   NearMeetupWrapper,
@@ -8,6 +7,7 @@ import {
   PopularGroupCard,
   UpcomingEventCard,
   MeetupWorkCard,
+  Navigation,
 } from "./MainLayout";
 
 export {

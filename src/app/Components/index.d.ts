@@ -7,9 +7,8 @@ import {
   PopularGroupCard,
   UpcomingEventCard,
   MeetupWorkCard,
+  Navigation,
 } from "./MainLayout";
-
-import { Navigation } from "./Navigation";
 
 export {
   LoginPopUp,

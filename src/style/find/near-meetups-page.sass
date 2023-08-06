@@ -1,7 +1,8 @@
+@use '../global/mixins'
+
 .near-meetups-page
     display: flex
     flex-direction: column
-    gap: 20px
     &__header
         font-size: 24px
     &__swap-links
@@ -10,6 +11,18 @@
     &__main
         display: flex
         flex-direction: column
+    &__section
+        position: sticky
+        padding: 15px 0 30px 0
+        top: 77px
+        @include mixins.tabletDevice
+            top: 206px
+        @include mixins.laptopDevice
+            top: 140px
+        z-index: 30
+        background: #222425
     &__article
         position: relative
-        top: -300px
+        top: 0px
+        &--top
+            top: -300px

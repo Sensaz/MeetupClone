@@ -4,20 +4,13 @@ import DropDown from "./dropdown/DropDown";
 import { eventsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { EventCard } from "./Cards";
+import classNames from "classnames";
 
 type SortType = string;
 
 type StateType = {
   [key in SortType]: boolean;
 };
-
-const initialState: StateType = eventsNearMeetupSortsSetup.reduce(
-  (acc: StateType, current) => {
-    acc[current.clickFunctionIsOpen] = false;
-    return acc;
-  },
-  {}
-);
 
 export default function EventsPage() {
   const { initialState } = useInitialState(eventsNearMeetupSortsSetup);
@@ -27,16 +20,22 @@ export default function EventsPage() {
     setEventsSort
   );
 
+  const hasTrueValue = Object.values(eventsSort).some(
+    (value) => value === true
+  );
+
   return (
     <>
-      <section className="near-meetups-page__section">
-        <DropDown
-          clickObj={clickObj}
-          isOpenObj={eventsSort}
-          nearMeetupSorts={eventsNearMeetupSortsSetup}
-        />
-      </section>
-      <article className="near-meetups-page__article">
+      <DropDown
+        clickObj={clickObj}
+        isOpenObj={eventsSort}
+        nearMeetupSorts={eventsNearMeetupSortsSetup}
+      />
+      <article
+        className={classNames("near-meetups-page__article", {
+          "near-meetups-page__article--top": hasTrueValue,
+        })}
+      >
         <EventCard />
         <EventCard />
         <EventCard />

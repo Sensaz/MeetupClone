@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import DropDownItem from "./DropDownItem";
 import "@/style/find/dropdown.sass";
 
@@ -24,7 +25,12 @@ interface Props {
 const DropDown = ({ nearMeetupSorts, clickObj, isOpenObj }: Props) => {
   const dropdownList = nearMeetupSorts.map(
     ({ id, title, content, clickFunctionName, clickFunctionIsOpen }) => (
-      <div id={id} className="dropdown">
+      <div
+        id={id}
+        className={classNames("dropdown", {
+          "dropdown--open": isOpenObj[clickFunctionIsOpen],
+        })}
+      >
         <button
           className="dropdown__button nes-select is-dark"
           onClick={clickObj[clickFunctionName]}
