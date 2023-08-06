@@ -4,7 +4,7 @@ import DropDown from "./dropdown/DropDown";
 import { eventsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { EventCard } from "./Cards";
-import { handleSetDropdawnValue } from "./handleSetDropdawnValue";
+import { handleSetDropdownValue } from "./handleSetDropdownValue";
 import classNames from "classnames";
 
 type SortType = string;
@@ -31,16 +31,16 @@ export default function EventsPage() {
         clickObj={clickObj}
         isOpenObj={eventsSort}
         nearMeetupSorts={eventsNearMeetupSortsSetup}
-        handleSetDropdawnValue={(
+        handleSetDropdownValue={(
           toChange: string,
           value: string,
-          whichDropdawnIsOpen: string
+          whichDropdownIsOpen: string
         ) =>
-          handleSetDropdawnValue(
+          handleSetDropdownValue(
             setEventsSort,
             toChange,
             value,
-            whichDropdawnIsOpen
+            whichDropdownIsOpen
           )
         }
       />
