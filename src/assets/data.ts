@@ -235,6 +235,7 @@ export const groupsNearMeetupSortsSetup: SortSetup[] = [
     clickFunctionIsOpen: "groupsKilometersSort",
     clickFunctionIsValue: "groupsKilometersValue",
     content: [
+      { id: 1, selectText: "Dowolna odległość", value: "any-distance" },
       { id: 2, selectText: "5 kilometrów", value: "5 kilometers" },
       { id: 3, selectText: "10 kilometrów", value: "10 kilometers" },
       { id: 4, selectText: "25 kilometrów", value: "25 kilometers" },
@@ -250,6 +251,7 @@ export const groupsNearMeetupSortsSetup: SortSetup[] = [
     clickFunctionIsOpen: "groupsCategorySort",
     clickFunctionIsValue: "groupsCategoryValue",
     content: [
+      { id: 1, selectText: "Dowolna kategoria", value: "any-category" },
       { id: 2, selectText: "Nowe grupy", value: "New groups" },
       {
         id: 3,
@@ -336,11 +338,12 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     clickFunctionIsOpen: "eventsTypeSort",
     clickFunctionIsValue: "eventsTypeValue",
     content: [
-      { id: 1, selectText: "Online", value: "" },
-      { id: 2, selectText: "Z dowolnym udziałem osobistym", value: "" },
-      { id: 3, selectText: "Z udziałem osobistym tylko wewnątrz", value: "" },
+      { id: 1, selectText: "Dowolny typ", value: "any type" },
+      { id: 2, selectText: "Online", value: "" },
+      { id: 3, selectText: "Z dowolnym udziałem osobistym", value: "" },
+      { id: 4, selectText: "Z udziałem osobistym tylko wewnątrz", value: "" },
       {
-        id: 4,
+        id: 5,
         selectText: "Z udziałem osobistym tylko na zewnątrz",
         value: "",
       },
@@ -353,6 +356,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     clickFunctionIsOpen: "eventsKilometersSort",
     clickFunctionIsValue: "eventsKilometersValue",
     content: [
+      { id: 1, selectText: "Dowolna odległośc", value: "any-distance" },
       { id: 2, selectText: "5 kilometrów", value: "5-kilometers" },
       { id: 3, selectText: "10 kilometrów", value: "10-kilometers" },
       { id: 4, selectText: "25 kilometrów", value: "25-kilometers" },
@@ -368,6 +372,7 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     clickFunctionIsOpen: "eventsCategorySort",
     clickFunctionIsValue: "eventsCategoryValue",
     content: [
+      { id: 1, selectText: "Dowolna Kategoria", value: "Any category" },
       { id: 2, selectText: "Nowe grupy", value: "New groups" },
       {
         id: 3,
@@ -433,6 +438,9 @@ export const eventsNearMeetupSortsSetup: SortSetup[] = [
     clickFunctionName: "handleEventsSort",
     clickFunctionIsOpen: "eventsSort",
     clickFunctionIsValue: "eventsValue",
-    content: [{ id: 2, selectText: "Sortuj według: Data", value: "" }],
+    content: [
+      { id: 1, selectText: "Sortuj według: Trafnośc", value: "" },
+      { id: 2, selectText: "Sortuj według: Data", value: "" },
+    ],
   },
 ];

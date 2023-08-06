@@ -51,7 +51,9 @@ const DropDown = ({
           })}
         >
           <button
-            className="dropdown__button nes-select is-dark"
+            className={classNames("dropdown__button", "nes-select", "is-dark", {
+              "dropdown__button--selected": isOpenObj[clickFunctionIsValue] !== title,
+            })}
             onClick={clickObj[clickFunctionName]}
           >
             {isOpenObj[clickFunctionIsValue]}
