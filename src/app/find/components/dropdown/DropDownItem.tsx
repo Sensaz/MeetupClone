@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { memo } from "react";
 interface MyComponentProps {
   children: string;
   handleSetDropdownValue: (
@@ -12,7 +12,7 @@ interface MyComponentProps {
   paramTitle: string;
 }
 
-const DropDownItem = ({
+export const DropDownItem = ({
   children,
   handleSetDropdownValue,
   toChange,
@@ -20,7 +20,7 @@ const DropDownItem = ({
   value,
   paramTitle,
 }: MyComponentProps) => {
-  const router = useRouter();
+  console.log("rerender");
   return (
     <li
       onClick={() => {
@@ -37,5 +37,3 @@ const DropDownItem = ({
     </li>
   );
 };
-
-export default DropDownItem;

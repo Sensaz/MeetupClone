@@ -1,6 +1,6 @@
 "use client";
 import React, { useCallback, useMemo, useState } from "react";
-import DropDown from "./dropdown/DropDown";
+import { DropDown } from "./dropdown/DropDown";
 import { groupsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { GroupCard } from "./Cards";
