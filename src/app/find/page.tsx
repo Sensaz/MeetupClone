@@ -14,8 +14,22 @@ export default function FindPage() {
 
   const search = searchParams.get("source");
   useEffect(() => {
-    if (search !== "GROUPS") router.push("?source=EVENTS");
-  }, []);
+    if (search !== "GROUPS") {
+      const queryParams = new URLSearchParams(window.location.search);
+
+      const existingParams: Record<string, string> = {};
+      queryParams.forEach((value, key) => {
+        existingParams[key] = value;
+      });
+
+      existingParams["source"] = "EVENTS";
+
+      const newQueryParams = new URLSearchParams(existingParams);
+      const newUrl = `${window.location.pathname}?${newQueryParams.toString()}`;
+
+      window.history.pushState({ path: newUrl }, "", newUrl);
+    }
+  }, [search, router]);
 
   return (
     <div className="near-meetups-page">
@@ -42,9 +56,7 @@ export default function FindPage() {
           </Link>
         </div>
       </section>
-      {/* <div className="near-meetups-page__main"> */}
-        {search === "GROUPS" ? <GroupsPage /> : <EventsPage />}
-      {/* </div> */}
+      {search === "GROUPS" ? <GroupsPage /> : <EventsPage />}
     </div>
   );
 }
