@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import DropDown from "./dropdown/DropDown";
 import { eventsNearMeetupSortsSetup } from "@/assets";
 import { useClickObjectCreator, useInitialState } from "@/hooks";
 import { EventCard } from "./Cards";
 import { handleSetDropdownValue } from "./handleSetDropdownValue";
+import { generateSelectValueMap } from "./generateSelectValueMap";
 import classNames from "classnames";
 
 type SortType = string;
@@ -14,15 +15,36 @@ type StateType = {
 };
 
 export default function EventsPage() {
-  const { initialState } = useInitialState(eventsNearMeetupSortsSetup);
+  const { initialState } = useMemo(
+    () => useInitialState(eventsNearMeetupSortsSetup),
+    []
+  );
   const [eventsSort, setEventsSort] = useState<StateType>(initialState);
-  const { clickObj } = useClickObjectCreator(
-    eventsNearMeetupSortsSetup,
-    setEventsSort
+  const { clickObj } = useMemo(
+    () => useClickObjectCreator(eventsNearMeetupSortsSetup, setEventsSort),
+    []
   );
 
-  const hasTrueValue = Object.values(eventsSort).some(
-    (value) => value === true
+  const paramData = useMemo(
+    () => generateSelectValueMap(eventsNearMeetupSortsSetup),
+    []
+  );
+
+  const hasTrueValue = useMemo(
+    () => Object.values(eventsSort).some((value) => value === true),
+    [eventsSort]
+  );
+
+  const generateDropdownValueHandler = useCallback(
+    (toChange: string, value: string, whichDropdownIsOpen: string) => {
+      handleSetDropdownValue(
+        setEventsSort,
+        toChange,
+        value,
+        whichDropdownIsOpen
+      );
+    },
+    []
   );
 
   return (
@@ -31,18 +53,8 @@ export default function EventsPage() {
         clickObj={clickObj}
         isOpenObj={eventsSort}
         nearMeetupSorts={eventsNearMeetupSortsSetup}
-        handleSetDropdownValue={(
-          toChange: string,
-          value: string,
-          whichDropdownIsOpen: string
-        ) =>
-          handleSetDropdownValue(
-            setEventsSort,
-            toChange,
-            value,
-            whichDropdownIsOpen
-          )
-        }
+        paramData={paramData}
+        handleSetDropdownValue={generateDropdownValueHandler}
       />
       <article
         className={classNames("near-meetups-page__article", {
