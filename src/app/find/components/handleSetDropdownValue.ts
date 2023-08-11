@@ -1,9 +1,5 @@
-type PrevValueType = {
-  [key: string]: boolean | string;
-};
-
 export const handleSetDropdownValue = (
-  setState: React.Dispatch<React.SetStateAction<PrevValueType>>,
+  setState: React.Dispatch<React.SetStateAction<KeyValueMap<BooleanOrString>>>,
   toChange: string,
   value: string,
   whichDropdownIsOpen: string

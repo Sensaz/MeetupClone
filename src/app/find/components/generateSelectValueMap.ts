@@ -1,29 +1,8 @@
-type objectType = {
-  [key: string]: string;
-};
-
-type SelectOption = {
-  id: number;
-  selectText: string;
-  value: string;
-};
-
-type SortSetup = {
-  id: string;
-  title: string;
-  clickFunctionName: string;
-  clickFunctionIsOpen: string;
-  clickFunctionIsValue: string;
-  paramTitle: string;
-  color?: boolean;
-  content: SelectOption[];
-};
-
 export const generateSelectValueMap = (inputObject: SortSetup[]) => {
-  const result: { [paramTitle: string]: objectType } = {};
+  const result: KeyValueMap<KeyValueMap<string>> = {};
 
   inputObject.forEach(({ content, paramTitle }) => {
-    const valueMap: objectType = {};
+    const valueMap: KeyValueMap<string> = {};
     content.forEach(({ value, selectText }) => {
       valueMap[value] = selectText;
     });

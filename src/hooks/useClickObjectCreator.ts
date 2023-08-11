@@ -1,34 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
-type clickObjType = {
-  [key: string]: () => void;
-};
-
-type SelectOption = {
-  id: number;
-  selectText: string;
-  value: string;
-};
-
-type DataType = {
-  id: string;
-  title: string;
-  clickFunctionName: string;
-  clickFunctionIsOpen: string;
-  content: SelectOption[];
-};
-
-type StateType = {
-  [key: string]: boolean | string;
-};
-
-type setStateType = Dispatch<SetStateAction<StateType>>;
+type setStateType = Dispatch<SetStateAction<KeyValueMap<BooleanOrString>>>;
 
 export const useClickObjectCreator = (
-  data: DataType[],
+  data: SortSetup[],
   setState: setStateType
 ) => {
-  const clickObj: clickObjType = data.reduce((acc: clickObjType, current) => {
+  const clickObj = data.reduce((acc, current) => {
     acc[current.clickFunctionName] = () =>
       ((key: string) => {
         setState((prevState) => ({
@@ -41,7 +19,7 @@ export const useClickObjectCreator = (
         }));
       })(current.clickFunctionIsOpen);
     return acc;
-  }, {});
+  }, {} as KeyValueMap<Void>);
 
   return { clickObj };
 };

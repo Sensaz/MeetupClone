@@ -4,20 +4,20 @@ import { createPortal } from "react-dom";
 import { Button } from "./Button";
 import "@/style/portal.sass";
 
-interface PortalProps {
+type PortalProps = {
   open: boolean;
-  handleOpen: () => void;
+  handleOpen: Void;
   children: ReactNode;
-}
+};
 
 export const Portal = ({ open = false, handleOpen, children }: PortalProps) => {
-  const ref = useRef<Element | null>(null);
+  const portalRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    ref.current = document.querySelector<HTMLElement>("#portal");
+    portalRef.current = document.querySelector<HTMLElement>("#portal");
   }, []);
 
-  return open && ref.current
+  return open && portalRef.current
     ? createPortal(
         <div>
           {" "}
@@ -27,7 +27,7 @@ export const Portal = ({ open = false, handleOpen, children }: PortalProps) => {
             <div>{children}</div>
           </div>
         </div>,
-        ref.current
+        portalRef.current
       )
     : null;
 };

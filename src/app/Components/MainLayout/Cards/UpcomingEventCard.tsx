@@ -1,23 +1,14 @@
 import Image, { StaticImageData } from "next/image";
 import "@/style/upcomming-event-card.sass";
 
-type UpcomingEventCardType = {
-  src: StaticImageData;
-  alt: string;
-  date: string;
-  title: string;
-  desc: string;
-  isNewGroup: boolean;
-};
-
 export const UpcomingEventCard = ({
-  src,
-  alt,
-  date,
+  src = "",
+  alt = "",
+  upcommingEventDate,
   title,
   desc,
   isNewGroup = false,
-}: UpcomingEventCardType) => {
+}: PartialNearEventObjType<StaticImageData | string>) => {
   return (
     <div className="upcomming-event-card">
       <div className="upcomming-event-card__img-wrapper">
@@ -26,7 +17,7 @@ export const UpcomingEventCard = ({
       <main className="upcomming-event-card__main">
         <header className="upcomming-event-card__section">
           <h3 className="upcomming-event-card__date nes-text is-success">
-            {date}
+            {upcommingEventDate}
           </h3>
           <h3 className="upcomming-event-card__event-title">{title}</h3>
         </header>

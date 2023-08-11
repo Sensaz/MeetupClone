@@ -1,18 +1,14 @@
 "use client";
 import Link from "next/link";
 
-interface MyComponentProps {
+type MyComponentProps = {
   children: string;
-  handleSetDropdownValue: (
-    toChange: string,
-    value: string,
-    whichDropdownIsOpen: string
-  ) => void;
+  handleSetDropdownValue: HandleSetDropdownValueType;
   toChange: string;
   whichDropdownIsOpen: string;
   value: string;
   paramTitle: string;
-}
+};
 
 export const DropDownItem = ({
   children,
@@ -36,7 +32,9 @@ export const DropDownItem = ({
       }}
       className="dropdown__item"
     >
-      <Link className="dropdown__link" href={handleSetUrl()}>- {children}</Link>
+      <Link className="dropdown__link" href={handleSetUrl()}>
+        - {children}
+      </Link>
     </li>
   );
 };

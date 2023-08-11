@@ -12,10 +12,6 @@ type AuthButtonProps = {
   auth: string;
 };
 
-type ShowAuthType = {
-  [key: string]: () => void;
-};
-
 export const AuthButton = ({
   children,
   theme,
@@ -25,7 +21,7 @@ export const AuthButton = ({
   const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
     useContext(GlobalContext);
 
-  const SHOW_AUTH: ShowAuthType = useMemo(
+  const SHOW_AUTH: KeyValueMap<Void> = useMemo(
     () => ({
       login: handleToggleLoginPopUp,
       register: handleToggleRegisterPopUp,

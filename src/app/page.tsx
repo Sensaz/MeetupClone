@@ -21,24 +21,20 @@ import category2 from "/public/category2.webp";
 import category3 from "/public/category3.webp";
 import "@/style/content-page.sass";
 
-type imgsObj = {
-  [key: string]: StaticImageData;
-};
-
-const imgsMeetupWorkCardsJSX: imgsObj = {
+const imgsMeetupWorkCardsJSX: KeyValueMap<StaticImageData> = {
   handsUp,
   joinGroup,
   ticket,
 };
 
-const imgsForCategoryCardsJSX: imgsObj = {
+const imgsForCategoryCardsJSX: KeyValueMap<StaticImageData> = {
   category1,
   category2,
   category3,
 };
 
 const meetupWorkCardsJSX = meetupWorkCards.map(
-  ({ id, title, text, alt, src, path }) => (
+  ({ id, title, text, alt, src, path }: MeetupWorkCardType) => (
     <MeetupWorkCard
       key={id}
       title={title}
@@ -50,14 +46,16 @@ const meetupWorkCardsJSX = meetupWorkCards.map(
   )
 );
 
-const categoryCardsJSX = categoryCards.map(({ id, text, alt, src }) => (
-  <CategoryCard
-    key={id}
-    text={text}
-    alt={alt}
-    src={imgsForCategoryCardsJSX[src]}
-  />
-));
+const categoryCardsJSX = categoryCards.map(
+  ({ id, text, alt, src }: CategoryCardsType) => (
+    <CategoryCard
+      key={id}
+      text={text}
+      alt={alt}
+      src={imgsForCategoryCardsJSX[src]}
+    />
+  )
+);
 
 export default function Home() {
   return (

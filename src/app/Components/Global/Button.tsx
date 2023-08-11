@@ -3,18 +3,14 @@
 import { ReactNode } from "react";
 import classNames from "classnames";
 
-type THEMESType = {
-  [key: string]: string;
-};
-
 type ButtonType = {
   children: ReactNode;
   theme?: string;
   className?: string;
-  click?: () => void;
+  click?: Void;
 };
 
-const THEMES: THEMESType = {
+const THEMES: KeyValueMap<string> = {
   normal: "",
   primary: "is-primary",
 };
