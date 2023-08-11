@@ -13,7 +13,7 @@ export const LoginPopUp = () => {
 
   const buttonsSection = useMemo(
     () =>
-      LoginPopUpButtons.map(({ id, text, icon }) => (
+      LoginPopUpButtons.map(({ id, text, icon }: ButtonPupUp) => (
         <Button key={id} className="portal-children__button">
           <i className={classNames("nes-icon is-medium", icon)}></i>
           {text}

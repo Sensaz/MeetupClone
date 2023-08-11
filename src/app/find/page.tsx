@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 
 import { EventsPage, GroupsPage } from "./components";
@@ -10,14 +10,13 @@ import "@/style/find/near-meetups-page.sass";
 
 export default function FindPage() {
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   const search = searchParams.get("source");
   useEffect(() => {
     if (search !== "GROUPS") {
       const queryParams = new URLSearchParams(window.location.search);
 
-      const existingParams: Record<string, string> = {};
+      const existingParams: KeyValueMap<string> = {};
       queryParams.forEach((value, key) => {
         existingParams[key] = value;
       });
@@ -26,7 +25,6 @@ export default function FindPage() {
 
       const newQueryParams = new URLSearchParams(existingParams);
       const newUrl = `${window.location.pathname}?${newQueryParams.toString()}`;
-      // router.push(newUrl);
       window.history.pushState({ path: newUrl }, "", newUrl);
     }
   }, [search]);

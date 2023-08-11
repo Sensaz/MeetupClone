@@ -1,4 +1,4 @@
-export const categoryCards = [
+export const categoryCards: CategoryCardsType[] = [
   {
     id: 1,
     text: "Nawiąż Nowe Znajomości",
@@ -19,7 +19,7 @@ export const categoryCards = [
   },
 ];
 
-export const meetupWorkCards = [
+export const meetupWorkCards: MeetupWorkCardType[] = [
   {
     id: 1,
     title: "Dołącz do grupy",
@@ -55,14 +55,14 @@ export const popularCategory: string[] = [
   "Szlifuj swoje umiejętności",
 ];
 
-export const nearGroupsObj = [
+export const nearGroupsObj: NearGroupsObjType[] = [
   {
     id: 1,
     src: "g1",
     alt: "something group",
     groupName: "Andover New Parents Meetup Group",
     upcommingEventDate: "",
-    eventDesc: "",
+    desc: "",
     isNewGroup: true,
   },
   {
@@ -71,7 +71,7 @@ export const nearGroupsObj = [
     alt: "something group",
     groupName: "The Usual Suspects",
     upcommingEventDate: "29 LIP 2023 18:00 CEST",
-    eventDesc: "Page Turners (book club) - First Gathering",
+    desc: "Page Turners (book club) - First Gathering",
     isNewGroup: false,
   },
   {
@@ -80,8 +80,7 @@ export const nearGroupsObj = [
     alt: "something group",
     groupName: "Agile Warsaw",
     upcommingEventDate: "31 LIP 2023 18:00 CEST",
-    eventDesc:
-      '#278 A. Michalczyk "Na czym polega eksperymentowanie i po co nam facylitator?"',
+    desc: '#278 A. Michalczyk "Na czym polega eksperymentowanie i po co nam facylitator?"',
     isNewGroup: false,
   },
   {
@@ -90,7 +89,7 @@ export const nearGroupsObj = [
     alt: "something group",
     groupName: "lablab.ai",
     upcommingEventDate: "28 LIP 2023 18:00 CEST",
-    eventDesc: "ElevenLabs AI Hackathon",
+    desc: "ElevenLabs AI Hackathon",
     isNewGroup: false,
   },
   {
@@ -99,8 +98,7 @@ export const nearGroupsObj = [
     alt: "something group",
     groupName: "[Software] Modeling Evolution PL",
     upcommingEventDate: "26 LIP 2023 18:00 CEST",
-    eventDesc:
-      "[ONLINE] Event Storming & Event Modeling - Let's rock! [PL] - Show me some code!",
+    desc: "[ONLINE] Event Storming & Event Modeling - Let's rock! [PL] - Show me some code!",
     isNewGroup: false,
   },
   {
@@ -109,17 +107,17 @@ export const nearGroupsObj = [
     alt: "something group",
     groupName: "The house of Agile",
     upcommingEventDate: "03 SIE 2023 17:30 CEST",
-    eventDesc: "Agile Coffee - wymieńmy się doświadczeniami",
+    desc: "Agile Coffee - wymieńmy się doświadczeniami",
     isNewGroup: false,
   },
 ];
 
-export const nearEventObj = [
+export const nearEventObj: NearEventObjType[] = [
   {
     id: 1,
     src: "event1",
     alt: "something event",
-    date: "SAT, JUL 29 · 2:00 AM CEST",
+    upcommingEventDate: "SAT, JUL 29 · 2:00 AM CEST",
     title: "Public Speaking Practice Online",
     desc: "Public Speaking Practice (online)",
     isNewGroup: true,
@@ -128,7 +126,7 @@ export const nearEventObj = [
     id: 2,
     src: "event2",
     alt: "something event",
-    date: "WED, AUG 2 · 2:00 AM CEST",
+    upcommingEventDate: "WED, AUG 2 · 2:00 AM CEST",
     title:
       "Reshaping Labels: Empowering Introverted Women to Craft Their Story",
     desc: "Radiant Introverted Women (20s and 30s) - Online",
@@ -138,7 +136,7 @@ export const nearEventObj = [
     id: 3,
     src: "event3",
     alt: "something event",
-    date: "FRI, JUL 28 · 12:00 AM CEST",
+    upcommingEventDate: "FRI, JUL 28 · 12:00 AM CEST",
     title: "Free 1:1 Life Coaching Session",
     desc: "Happiness is a Choice",
     isNewGroup: true,
@@ -147,7 +145,7 @@ export const nearEventObj = [
     id: 4,
     src: "event4",
     alt: "something event",
-    date: "FRI, JUL 28 · 1:30 AM CEST",
+    upcommingEventDate: "FRI, JUL 28 · 1:30 AM CEST",
     title:
       "NYC Chronic Illness Support Group - Meet and Greet, (R, 7/27 @ 7:30)",
     desc: "NYC Chronic Illness Support Group",
@@ -157,7 +155,7 @@ export const nearEventObj = [
     id: 5,
     src: "event5",
     alt: "something event",
-    date: "TUE, AUG 1 · 2:00 AM CEST",
+    upcommingEventDate: "TUE, AUG 1 · 2:00 AM CEST",
     title: "Join the Bitcoin Gold Rush: Building Wealth with Bitcoin",
     desc: "Financial Freedom - Proven Ways to Make More Money",
     isNewGroup: false,
@@ -166,7 +164,7 @@ export const nearEventObj = [
     id: 6,
     src: "event6",
     alt: "something event",
-    date: "FRI, JUL 28 · 12:00 AM CEST",
+    upcommingEventDate: "FRI, JUL 28 · 12:00 AM CEST",
     title: "Business Brainstorming",
     desc: "Online Women Entrepreneurs Meetup Group",
     isNewGroup: true,
@@ -175,7 +173,7 @@ export const nearEventObj = [
     id: 7,
     src: "event7",
     alt: "something event",
-    date: "FRI, AUG 11 · 10:00 PM CEST",
+    upcommingEventDate: "FRI, AUG 11 · 10:00 PM CEST",
     title: "How to use AI to apply for Business Grants",
     desc: "Business Grants for Women Meetup Group",
     isNewGroup: true,
@@ -184,14 +182,14 @@ export const nearEventObj = [
     id: 8,
     src: "event8",
     alt: "something event",
-    date: "FRI, JUL 28 · 12:00 AM CEST",
+    upcommingEventDate: "FRI, JUL 28 · 12:00 AM CEST",
     title: "Free 1:1 Life Coaching Session",
     desc: "Happiness is a Choice",
     isNewGroup: true,
   },
 ];
 
-export const LoginPopUpButtons = [
+export const LoginPopUpButtons: ButtonPupUp[] = [
   {
     id: 1,
     text: "Zaloguj za pomocą facebooka",
@@ -201,7 +199,7 @@ export const LoginPopUpButtons = [
   { id: 3, text: "Zaloguj za pomocą apple", icon: "star is-transparent" },
 ];
 
-export const RegisterPopUpButtons = [
+export const RegisterPopUpButtons: ButtonPupUp[] = [
   {
     id: 1,
     text: " Kontynuuj za pomocą facebooka",
@@ -211,23 +209,6 @@ export const RegisterPopUpButtons = [
   { id: 3, text: "Kontynuuj za pomocą apple", icon: "star is-transparent" },
   { id: 4, text: "Kontynuuj za pomocą gmail", icon: "gmail" },
 ];
-
-type SelectOption = {
-  id: number;
-  selectText: string;
-  value: string;
-};
-
-type SortSetup = {
-  id: string;
-  title: string;
-  clickFunctionName: string;
-  clickFunctionIsOpen: string;
-  clickFunctionIsValue: string;
-  paramTitle: string;
-  color?: boolean;
-  content: SelectOption[];
-};
 
 export const groupsNearMeetupSortsSetup: SortSetup[] = [
   {

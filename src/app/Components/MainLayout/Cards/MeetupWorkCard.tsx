@@ -2,21 +2,13 @@ import Image, { StaticImageData } from "next/image";
 import "@/style/meetup-work-card.sass";
 import Link from "next/link";
 
-type MeetupWorkCardType = {
-  title: string;
-  text: string;
-  src: StaticImageData;
-  alt: string;
-  path?: string;
-};
-
 export const MeetupWorkCard = ({
   title,
   text,
-  src,
-  alt,
+  src = "",
+  alt = "",
   path = "/",
-}: MeetupWorkCardType) => {
+}: PartialMeetupWorkCardType<StaticImageData | string>) => {
   return (
     <Link href={path}>
       <div className="meetup-work-card">

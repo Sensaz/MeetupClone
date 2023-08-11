@@ -16,7 +16,7 @@ export const RegisterPopUp = () => {
   } = useContext(GlobalContext);
   const buttonsSection = useMemo(
     () =>
-      RegisterPopUpButtons.map(({ id, text, icon }) => (
+      RegisterPopUpButtons.map(({ id, text, icon }: ButtonPupUp) => (
         <Button key={id} className="portal-children__button">
           <i className={classNames("nes-icon is-medium", icon)}></i>
           {text}

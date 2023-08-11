@@ -1,23 +1,14 @@
 import Image, { StaticImageData } from "next/image";
 import "@/style/popular-group-card.sass";
 
-type PopularGroupCardType = {
-  src: StaticImageData;
-  alt: string;
-  isNewGroup: boolean;
-  groupName: string;
-  upcommingEventDate: string;
-  eventDesc: string;
-};
-
 export const PopularGroupCard = ({
-  src,
-  alt,
+  src = "",
+  alt = "",
   isNewGroup = false,
   groupName,
+  desc,
   upcommingEventDate = "",
-  eventDesc,
-}: PopularGroupCardType) => {
+}: PartialNearGroupsObjType<StaticImageData | string>) => {
   return (
     <div className="popular-group-card">
       <header className="popular-group-card__header">
@@ -40,9 +31,7 @@ export const PopularGroupCard = ({
             <span className="popular-group-card__event-date nes-text is-success">
               {upcommingEventDate}
             </span>
-            <strong className="popular-group-card__event-desc">
-              {eventDesc}
-            </strong>
+            <strong className="popular-group-card__event-desc">{desc}</strong>
           </>
         ) : (
           <h3 className="popular-group-card__lack-event">NO UPCOMING EVENTS</h3>

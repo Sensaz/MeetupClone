@@ -5,34 +5,13 @@ import "@/style/find/dropdown.sass";
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
-type SelectOption = {
-  id: number;
-  selectText: string;
-  value: string;
-};
-
-type SortSetup = {
-  id: string;
-  title: string;
-  clickFunctionName: string;
-  clickFunctionIsOpen: string;
-  clickFunctionIsValue: string;
-  color?: boolean;
-  paramTitle: string;
-  content: SelectOption[];
-};
-
-interface Props {
+type Props = {
   nearMeetupSorts: SortSetup[];
-  clickObj: { [key: string]: () => void };
-  isOpenObj: { [key: string]: boolean | string };
-  paramData: { [key: string]: { [key: string]: string } };
-  handleSetDropdownValue: (
-    toChange: string,
-    value: string,
-    whichDropdownIsOpen: string
-  ) => void;
-}
+  clickObj: KeyValueMap<Void>;
+  isOpenObj: KeyValueMap<BooleanOrString>;
+  paramData: KeyValueMap<KeyValueMap<string>>;
+  handleSetDropdownValue: HandleSetDropdownValueType;
+};
 
 export const DropDown = ({
   nearMeetupSorts,
@@ -57,7 +36,7 @@ export const DropDown = ({
       const data: string = paramData[paramTitle][search];
       const currentValue: string =
         data || (isOpenObj[clickFunctionIsValue] as string);
-      const dropdownIsOpen = isOpenObj[clickFunctionIsOpen];
+      const dropdownIsOpen: boolean = isOpenObj[clickFunctionIsOpen] as boolean;
       const result = useMemo(
         () => (
           <div

@@ -1,12 +1,11 @@
 import "@/style/category-card.sass";
 import Image, { StaticImageData } from "next/image";
-type CategoryCardType = {
-  text: string;
-  src: StaticImageData;
-  alt: string;
-};
 
-export const CategoryCard = ({ text, src, alt }: CategoryCardType) => {
+export const CategoryCard = ({
+  text,
+  src = "",
+  alt = "",
+}: PartialCategoryCardsType<StaticImageData | string>) => {
   return (
     <div className="category-card nes-pointer">
       <div className="category-card__img-wrapper">

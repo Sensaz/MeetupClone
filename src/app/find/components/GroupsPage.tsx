@@ -8,18 +8,13 @@ import classNames from "classnames";
 import { handleSetDropdownValue } from "./handleSetDropdownValue";
 import { generateSelectValueMap } from "./generateSelectValueMap";
 
-type SortType = string;
-
-type StateType = {
-  [key in SortType]: boolean | string;
-};
-
 export default function GroupsPage() {
   const { initialState } = useMemo(
     () => useInitialState(groupsNearMeetupSortsSetup),
     []
   );
-  const [groupsSort, setGroupsSort] = useState<StateType>(initialState);
+  const [groupsSort, setGroupsSort] =
+    useState<KeyValueMap<BooleanOrString>>(initialState);
 
   const { clickObj } = useMemo(
     () => useClickObjectCreator(groupsNearMeetupSortsSetup, setGroupsSort),

@@ -9,11 +9,7 @@ import g5 from "/public/GroupIMG/g5.jpg";
 import g6 from "/public/GroupIMG/g6.jpg";
 import { StaticImageData } from "next/image";
 
-type ImgsType = {
-  [key: string]: StaticImageData;
-};
-
-const imgs: ImgsType = {
+const imgs: KeyValueMap<StaticImageData> = {
   g1,
   g2,
   g3,
@@ -23,7 +19,15 @@ const imgs: ImgsType = {
 };
 
 const popularGroups = nearGroupsObj.map(
-  ({ id, src, alt, isNewGroup, groupName, upcommingEventDate, eventDesc }) => (
+  ({
+    id,
+    src,
+    alt,
+    isNewGroup,
+    groupName,
+    upcommingEventDate,
+    desc,
+  }: NearGroupsObjType) => (
     <PopularGroupCard
       key={id}
       src={imgs[src]}
@@ -31,7 +35,7 @@ const popularGroups = nearGroupsObj.map(
       isNewGroup={isNewGroup}
       groupName={groupName}
       upcommingEventDate={upcommingEventDate}
-      eventDesc={eventDesc}
+      desc={desc}
     />
   )
 );

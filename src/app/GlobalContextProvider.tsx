@@ -5,8 +5,8 @@ import { createContext, useState, ReactNode, useCallback } from "react";
 type IGlobalContextProps = {
   showLoginPopUp: boolean;
   showRegisterPopUp: boolean;
-  handleToggleLoginPopUp: () => void;
-  handleToggleRegisterPopUp: () => void;
+  handleToggleLoginPopUp: Void;
+  handleToggleRegisterPopUp: Void;
 };
 
 type GlobalContextProviderProps = {
@@ -23,13 +23,13 @@ export const GlobalContext = createContext<IGlobalContextProps>({
 export const GlobalContextProvider = ({
   children,
 }: GlobalContextProviderProps) => {
-  const [showLoginPopUp, setShowLoginPopUp] = useState(false);
-  const [showRegisterPopUp, setShowRegisterPopUp] = useState(false);
+  const [showLoginPopUp, setShowLoginPopUp] = useState<boolean>(false);
+  const [showRegisterPopUp, setShowRegisterPopUp] = useState<boolean>(false);
 
-  const handleToggleLoginPopUp = useCallback(() => {
+  const handleToggleLoginPopUp: Void = useCallback(() => {
     setShowLoginPopUp((prev) => !prev);
   }, []);
-  const handleToggleRegisterPopUp = useCallback(() => {
+  const handleToggleRegisterPopUp: Void = useCallback(() => {
     setShowRegisterPopUp((prev) => !prev);
   }, []);
 

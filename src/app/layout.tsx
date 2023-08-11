@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import type { Metadata } from "next";
-import "@/style/index.sass";
 import { LoginPopUp, RegisterPopUp } from "@/app/components";
 import { GlobalContextProvider } from "./GlobalContextProvider";
+import "@/style/index.sass";
 
 export const metadata: Metadata = {
   title: "Meetup Clone",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="pl">

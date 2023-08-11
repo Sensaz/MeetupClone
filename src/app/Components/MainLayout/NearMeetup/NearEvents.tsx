@@ -12,7 +12,7 @@ import event7 from "/public/EventIMG/event7.webp";
 import event8 from "/public/EventIMG/event8.webp";
 import { StaticImageData } from "next/image";
 
-const eventsImg: Record<string, StaticImageData> = {
+const eventsImg: KeyValueMap<StaticImageData> = {
   event1,
   event2,
   event3,
@@ -23,23 +23,21 @@ const eventsImg: Record<string, StaticImageData> = {
   event8,
 };
 
-type NearEventObjType = {
-  id: number;
-  src: string;
-  alt: string;
-  date: string;
-  title: string;
-  desc: string;
-  isNewGroup: boolean;
-};
-
 const nearEventsMap = nearEventObj.map(
-  ({ id, src, alt, date, title, desc, isNewGroup }: NearEventObjType) => (
+  ({
+    id,
+    src,
+    alt,
+    upcommingEventDate,
+    title,
+    desc,
+    isNewGroup,
+  }: NearEventObjType) => (
     <UpcomingEventCard
       key={id}
       src={eventsImg[src]}
       alt={alt}
-      date={date}
+      upcommingEventDate={upcommingEventDate}
       title={title}
       desc={desc}
       isNewGroup={isNewGroup}

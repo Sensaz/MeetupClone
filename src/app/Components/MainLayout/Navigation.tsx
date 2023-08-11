@@ -7,7 +7,7 @@ import { GlobalContext } from "@/app/GlobalContextProvider";
 import Link from "next/link";
 
 type Props = {
-  sticky: boolean;
+  sticky?: boolean;
 };
 
 export const Navigation = ({ sticky }: Props) => {
