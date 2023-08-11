@@ -26,10 +26,10 @@ export default function FindPage() {
 
       const newQueryParams = new URLSearchParams(existingParams);
       const newUrl = `${window.location.pathname}?${newQueryParams.toString()}`;
-
+      // router.push(newUrl);
       window.history.pushState({ path: newUrl }, "", newUrl);
     }
-  }, [search, router]);
+  }, [search]);
 
   return (
     <div className="near-meetups-page">

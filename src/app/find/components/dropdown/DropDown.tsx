@@ -3,7 +3,7 @@ import { DropDownItem } from "./DropDownItem";
 import DropdownValue from "./DropdownValue";
 import "@/style/find/dropdown.sass";
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
 type SelectOption = {
   id: number;
@@ -55,7 +55,8 @@ export const DropDown = ({
       const searchParams: ReadonlyURLSearchParams = useSearchParams();
       const search: string = searchParams.get(paramTitle) || "";
       const data: string = paramData[paramTitle][search];
-      const currentValue: string = isOpenObj[clickFunctionIsValue] as string;
+      const currentValue: string =
+        data || (isOpenObj[clickFunctionIsValue] as string);
       const dropdownIsOpen = isOpenObj[clickFunctionIsOpen];
       const result = useMemo(
         () => (
@@ -72,7 +73,9 @@ export const DropDown = ({
                 "is-dark",
                 {
                   "dropdown__button--selected":
-                    currentValue !== title || color || (data !== title && data),
+                    currentValue !== title ||
+                    (data !== title && !!data) ||
+                    color,
                 }
               )}
               onClick={clickObj[clickFunctionName]}

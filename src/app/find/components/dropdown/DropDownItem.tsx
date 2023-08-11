@@ -1,4 +1,6 @@
-import { memo } from "react";
+"use client";
+import Link from "next/link";
+
 interface MyComponentProps {
   children: string;
   handleSetDropdownValue: (
@@ -20,20 +22,21 @@ export const DropDownItem = ({
   value,
   paramTitle,
 }: MyComponentProps) => {
-  console.log("rerender");
+  const handleSetUrl = () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    queryParams.set(paramTitle, value);
+    const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
+    return newUrl;
+  };
+
   return (
     <li
       onClick={() => {
         handleSetDropdownValue(toChange, children, whichDropdownIsOpen);
-        const queryParams = new URLSearchParams(window.location.search);
-        queryParams.set(paramTitle, value);
-
-        const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
-        window.history.pushState({ path: newUrl }, "", newUrl);
       }}
       className="dropdown__item"
     >
-      - {children}
+      <Link className="dropdown__link" href={handleSetUrl()}>- {children}</Link>
     </li>
   );
 };
