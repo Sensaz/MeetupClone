@@ -1,14 +1,17 @@
 "use client";
 import Link from "next/link";
+import { z } from "zod";
 
-type MyComponentProps = {
-  children: string;
-  handleSetDropdownValue: HandleSetDropdownValueType;
-  toChange: string;
-  whichDropdownIsOpen: string;
-  value: string;
-  paramTitle: string;
-};
+const myComponentSchema = z.object({
+  children: z.string(),
+  handleSetDropdownValue: z.custom<HandleSetDropdownValueType>(),
+  toChange: z.string(),
+  whichDropdownIsOpen: z.string(),
+  value: z.string(),
+  paramTitle: z.string(),
+});
+
+type MyComponentProps = z.infer<typeof myComponentSchema>;
 
 export const DropDownItem = ({
   children,

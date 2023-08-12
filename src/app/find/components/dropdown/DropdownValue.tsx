@@ -1,13 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { z } from "zod";
 
-type Props = {
-  searchData: string | undefined;
-  dynamicValue: string;
-};
+const dropDownSchema = z.object({
+  searchData: z.string().optional(),
+  dynamicValue: z.string(),
+});
 
-export default function DropdownValue({ searchData, dynamicValue }: Props) {
+type DropdownValueType = z.infer<typeof dropDownSchema>;
+
+export default function DropdownValue({
+  searchData,
+  dynamicValue,
+}: DropdownValueType) {
   const [value, setValue] = useState<string>("");
   useEffect(() => {
     setValue(dynamicValue);

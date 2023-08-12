@@ -5,12 +5,15 @@ import classNames from "classnames";
 import "@/style/navigation.sass";
 import { GlobalContext } from "@/app/GlobalContextProvider";
 import Link from "next/link";
+import { z } from "zod";
 
-type Props = {
-  sticky?: boolean;
-};
+const navigationTypeSchema = z.object({
+  sticky: z.boolean().optional(),
+});
 
-export const Navigation = ({ sticky }: Props) => {
+type NavigationType = z.infer<typeof navigationTypeSchema>;
+
+export const Navigation = ({ sticky }: NavigationType) => {
   const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
     useContext(GlobalContext);
   const [toggleHamburger, setToggleHamburger] = useState<boolean>(false);
