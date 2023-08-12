@@ -1,13 +1,17 @@
 "use client";
-
+import { z } from "zod";
 import { createContext, useState, ReactNode, useCallback } from "react";
 
-type IGlobalContextProps = {
-  showLoginPopUp: boolean;
-  showRegisterPopUp: boolean;
-  handleToggleLoginPopUp: Void;
-  handleToggleRegisterPopUp: Void;
-};
+const contextVoidSchema = z.function().returns(z.void());
+
+const iglobalContextSchema = z.object({
+  showLoginPopUp: z.boolean(),
+  showRegisterPopUp: z.boolean(),
+  handleToggleLoginPopUp: contextVoidSchema,
+  handleToggleRegisterPopUp: contextVoidSchema,
+});
+
+type IGlobalContextProps = z.infer<typeof iglobalContextSchema>;
 
 type GlobalContextProviderProps = {
   children: ReactNode;

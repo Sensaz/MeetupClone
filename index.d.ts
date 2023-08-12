@@ -112,7 +112,6 @@ type SortSetup = {
 /* --------------------------------- */
 // General Types
 /* --------------------------------- */
-
 type BooleanOrString = boolean | string;
 type Void = () => void;
 

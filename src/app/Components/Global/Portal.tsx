@@ -3,12 +3,15 @@ import { useRef, useEffect, ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "./Button";
 import "@/style/portal.sass";
+import { z } from "zod";
 
-type PortalProps = {
-  open: boolean;
-  handleOpen: Void;
-  children: ReactNode;
-};
+const portalPropsSchema = z.object({
+  open: z.boolean(),
+  handleOpen: z.function().args().returns(z.void()),
+  children: z.custom<ReactNode>(),
+});
+
+type PortalProps = z.infer<typeof portalPropsSchema>;
 
 export const Portal = ({ open = false, handleOpen, children }: PortalProps) => {
   const portalRef = useRef<HTMLElement | null>(null);

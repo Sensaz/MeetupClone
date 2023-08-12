@@ -1,10 +1,15 @@
 import { Dispatch, SetStateAction } from "react";
+import { z } from "zod";
 
-type setStateType = Dispatch<SetStateAction<KeyValueMap<BooleanOrString>>>;
+const dataSchema = z.custom<SortSetup[]>();
+const setStateSchema =
+  z.custom<Dispatch<SetStateAction<KeyValueMap<BooleanOrString>>>>();
+type DataType = z.infer<typeof dataSchema>;
+type SetStateType = z.infer<typeof setStateSchema>;
 
 export const useClickObjectCreator = (
-  data: SortSetup[],
-  setState: setStateType
+  data: DataType,
+  setState: SetStateType
 ) => {
   const clickObj = data.reduce((acc, current) => {
     acc[current.clickFunctionName] = () =>

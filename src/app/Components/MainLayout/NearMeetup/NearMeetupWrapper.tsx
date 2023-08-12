@@ -1,13 +1,16 @@
 import { ReactNode } from "react";
 import "@/style/near-meetup-wrapper.sass";
 import Link from "next/link";
+import { z } from "zod";
 
-type NearMeetupWrapperType = {
-  title: string;
-  linkText: string;
-  path: string;
-  children: ReactNode;
-};
+const nearMeetupWrapperSchema = z.object({
+  title: z.string(),
+  linkText: z.string(),
+  path: z.string(),
+  children: z.custom<ReactNode>(),
+});
+
+type NearMeetupWrapperType = z.infer<typeof nearMeetupWrapperSchema>;
 
 export const NearMeetupWrapper = ({
   title,

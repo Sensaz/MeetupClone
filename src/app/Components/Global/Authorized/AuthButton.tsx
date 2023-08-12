@@ -2,15 +2,17 @@
 
 import React, { ReactNode, useContext, useMemo } from "react";
 import { Button } from "../Button";
-
 import { GlobalContext } from "@/app/GlobalContextProvider";
+import { z } from "zod";
 
-type AuthButtonProps = {
-  children: ReactNode;
-  theme?: string;
-  className?: string;
-  auth: string;
-};
+const authButtonSchema = z.object({
+  children: z.custom<ReactNode>(),
+  theme: z.string().optional(),
+  className: z.string().optional(),
+  auth: z.enum(["login", "register"]),
+});
+
+type AuthButtonProps = z.infer<typeof authButtonSchema>;
 
 export const AuthButton = ({
   children,

@@ -4,14 +4,17 @@ import DropdownValue from "./DropdownValue";
 import "@/style/find/dropdown.sass";
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import { z } from "zod";
 
-type Props = {
-  nearMeetupSorts: SortSetup[];
-  clickObj: KeyValueMap<Void>;
-  isOpenObj: KeyValueMap<BooleanOrString>;
-  paramData: KeyValueMap<KeyValueMap<string>>;
-  handleSetDropdownValue: HandleSetDropdownValueType;
-};
+const dropDownSchema = z.object({
+  nearMeetupSorts: z.custom<SortSetup[]>(),
+  clickObj: z.custom<KeyValueMap<Void>>(),
+  isOpenObj: z.custom<KeyValueMap<BooleanOrString>>(),
+  paramData: z.custom<KeyValueMap<KeyValueMap<string>>>(),
+  handleSetDropdownValue: z.custom<HandleSetDropdownValueType>(),
+});
+
+type DropDownType = z.infer<typeof dropDownSchema>;
 
 export const DropDown = ({
   nearMeetupSorts,
@@ -19,7 +22,7 @@ export const DropDown = ({
   isOpenObj,
   paramData,
   handleSetDropdownValue,
-}: Props) => {
+}: DropDownType) => {
   const dropdownList = nearMeetupSorts.map(
     ({
       id,
@@ -32,11 +35,12 @@ export const DropDown = ({
       color,
     }) => {
       const searchParams: ReadonlyURLSearchParams = useSearchParams();
-      const search: string = searchParams.get(paramTitle) || "";
-      const data: string = paramData[paramTitle][search];
-      const currentValue: string =
-        data || (isOpenObj[clickFunctionIsValue] as string);
-      const dropdownIsOpen: boolean = isOpenObj[clickFunctionIsOpen] as boolean;
+      const search = z.string().parse(searchParams.get(paramTitle) || "");
+      const data = z.string().parse(paramData[paramTitle][search]);
+      const currentValue = z
+        .string()
+        .parse(data || isOpenObj[clickFunctionIsValue]);
+      const dropdownIsOpen = z.boolean().parse(isOpenObj[clickFunctionIsOpen]);
       const result = useMemo(
         () => (
           <div
