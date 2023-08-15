@@ -35,12 +35,11 @@ export const DropDown = ({
       color,
     }) => {
       const searchParams: ReadonlyURLSearchParams = useSearchParams();
-      const search = z.string().parse(searchParams.get(paramTitle) || "");
-      const data = z.string().parse(paramData[paramTitle][search]);
-      const currentValue = z
-        .string()
-        .parse(data || isOpenObj[clickFunctionIsValue]);
-      const dropdownIsOpen = z.boolean().parse(isOpenObj[clickFunctionIsOpen]);
+      const search: string = searchParams.get(paramTitle) || "";
+      const data: string = paramData[paramTitle][search];
+      const currentValue: string =
+        data || (isOpenObj[clickFunctionIsValue] as string);
+      const dropdownIsOpen: boolean = isOpenObj[clickFunctionIsOpen] as boolean;
       const result = useMemo(
         () => (
           <div
