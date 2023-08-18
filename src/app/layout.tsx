@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { LoginPopUp, RegisterPopUp } from "@/app/components";
 import { GlobalContextProvider } from "./GlobalContextProvider";
 import "@/style/index.sass";
+import { ReactQueryClientProvider } from "./ReactQueryClientProvider";
 
 export const metadata: Metadata = {
   title: "Meetup Clone",
@@ -18,7 +19,7 @@ export default async function RootLayout({
     <html lang="pl">
       <body>
         <GlobalContextProvider>
-          {children}
+          <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
           <LoginPopUp />
           <RegisterPopUp />
         </GlobalContextProvider>
