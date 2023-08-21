@@ -78,6 +78,7 @@ type ButtonPupUp = {
   id: number;
   text: string;
   icon: string;
+  manualRegistration?: boolean;
 };
 
 /* --------------------------------- */

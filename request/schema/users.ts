@@ -1,4 +1,4 @@
-import { ObjectType, Field, ID } from "type-graphql";
+import { ObjectType, Field, ID, InputType } from "type-graphql";
 
 @ObjectType()
 export class User {
@@ -12,4 +12,40 @@ export class User {
   password!: String;
   @Field(() => String)
   location!: String;
+}
+
+@ObjectType()
+export class AddUserResolverType {
+  @Field()
+  name!: string;
+  @Field()
+  email!: string;
+  @Field()
+  password!: string;
+  @Field()
+  location!: string;
+}
+
+@InputType()
+export class RegisterInput {
+  @Field()
+  name!: string;
+  @Field()
+  email!: string;
+  @Field()
+  password!: string;
+  @Field()
+  location!: string;
+}
+
+@ObjectType()
+export class EmailResolverType {
+  @Field()
+  email!: string;
+}
+
+@InputType()
+export class EmailInput {
+  @Field()
+  email!: string;
 }

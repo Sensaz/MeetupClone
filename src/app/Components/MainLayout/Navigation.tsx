@@ -14,7 +14,7 @@ const navigationTypeSchema = z.object({
 type NavigationType = z.infer<typeof navigationTypeSchema>;
 
 export const Navigation = ({ sticky }: NavigationType) => {
-  const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
+  const { handleOpenLoginPopUp, handleOpenRegisterPopUp } =
     useContext(GlobalContext);
   const [toggleHamburger, setToggleHamburger] = useState<boolean>(false);
   const handleToggleHamburger = useCallback(() => {
@@ -56,13 +56,13 @@ export const Navigation = ({ sticky }: NavigationType) => {
               </a>
               {/* <p>Polski</p> */}
               <Button
-                click={handleToggleLoginPopUp}
+                click={handleOpenLoginPopUp}
                 className="navigation__button"
               >
                 Zaloguj
               </Button>
               <Button
-                click={handleToggleRegisterPopUp}
+                click={handleOpenRegisterPopUp}
                 className="navigation__button"
               >
                 Zarejestruj

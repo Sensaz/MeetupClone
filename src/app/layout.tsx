@@ -1,6 +1,10 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { LoginPopUp, RegisterPopUp } from "@/app/components";
+import {
+  LoginPopUp,
+  RegisterPopUp,
+  ManualRegistrationPopUp,
+} from "@/app/components";
 import { GlobalContextProvider } from "./GlobalContextProvider";
 import "@/style/index.sass";
 import { ReactQueryClientProvider } from "./ReactQueryClientProvider";
@@ -19,9 +23,12 @@ export default async function RootLayout({
     <html lang="pl">
       <body>
         <GlobalContextProvider>
-          <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
-          <LoginPopUp />
-          <RegisterPopUp />
+          <ReactQueryClientProvider>
+            {children}
+            <LoginPopUp />
+            <RegisterPopUp />
+            <ManualRegistrationPopUp />
+          </ReactQueryClientProvider>
         </GlobalContextProvider>
         <div id="portal" />
       </body>

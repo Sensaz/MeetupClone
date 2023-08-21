@@ -8,7 +8,7 @@ import { GlobalContext } from "@/app/GlobalContextProvider";
 import "@/style/portal-children.sass";
 
 export const LoginPopUp = () => {
-  const { showLoginPopUp, handleToggleLoginPopUp, handleToggleRegisterPopUp } =
+  const { showLoginPopUp, handleCloseAuthPopUp, handleOpenRegisterPopUp } =
     useContext(GlobalContext);
 
   const buttonsSection = useMemo(
@@ -23,19 +23,13 @@ export const LoginPopUp = () => {
   );
 
   return (
-    <Portal open={showLoginPopUp} handleOpen={handleToggleLoginPopUp}>
+    <Portal open={showLoginPopUp} handleClose={handleCloseAuthPopUp}>
       <div className="portal-children">
         <header className="portal-children__header">
           <h2 className="portal-children__title">Zaloguj się</h2>
           <p className="portal-children__message">
             Nie jesteś jeszcze członkiem?{" "}
-            <a
-              href="#"
-              onClick={() => {
-                handleToggleLoginPopUp();
-                handleToggleRegisterPopUp();
-              }}
-            >
+            <a href="#" onClick={handleOpenRegisterPopUp}>
               Zapisz się
             </a>
           </p>

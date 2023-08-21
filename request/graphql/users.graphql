@@ -1,6 +1,14 @@
 query getUsers {
   users {
     email
+  }
+}
+
+mutation RegisterUser($input: RegisterInput!) {
+  createUser(input: $input) {
     name
+    email
+    password
+    location
   }
 }

@@ -36,7 +36,6 @@ export const Button = ({
     <button
       onClick={click}
       className={classNames("nes-btn", PARSE_THEMES[theme], className)}
-      type="button"
     >
       {children}
     </button>

@@ -17,9 +17,34 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
+export type AddUserResolverType = {
+  __typename?: 'AddUserResolverType';
+  email: Scalars['String']['output'];
+  location: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  password: Scalars['String']['output'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  createUser: AddUserResolverType;
+};
+
+
+export type MutationCreateUserArgs = {
+  input: RegisterInput;
+};
+
 export type Query = {
   __typename?: 'Query';
   users: Array<User>;
+};
+
+export type RegisterInput = {
+  email: Scalars['String']['input'];
+  location: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+  password: Scalars['String']['input'];
 };
 
 export type User = {
@@ -34,14 +59,30 @@ export type User = {
 export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', email: string, name: string }> };
+export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', email: string }> };
+
+export type RegisterUserMutationVariables = Exact<{
+  input: RegisterInput;
+}>;
+
+
+export type RegisterUserMutation = { __typename?: 'Mutation', createUser: { __typename?: 'AddUserResolverType', name: string, email: string, password: string, location: string } };
 
 
 export const GetUsersDocument = gql`
     query getUsers {
   users {
     email
+  }
+}
+    `;
+export const RegisterUserDocument = gql`
+    mutation RegisterUser($input: RegisterInput!) {
+  createUser(input: $input) {
     name
+    email
+    password
+    location
   }
 }
     `;
@@ -55,6 +96,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     getUsers(variables?: GetUsersQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetUsersQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetUsersQuery>(GetUsersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getUsers', 'query');
+    },
+    RegisterUser(variables: RegisterUserMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<RegisterUserMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<RegisterUserMutation>(RegisterUserDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'RegisterUser', 'mutation');
     }
   };
 }

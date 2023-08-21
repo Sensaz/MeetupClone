@@ -1,4 +1,3 @@
-"use client";
 import Image, { StaticImageData } from "next/image";
 import { useFetchData } from "@/hooks/useFetchData";
 
@@ -22,7 +21,6 @@ import category1 from "/public/category1.webp";
 import category2 from "/public/category2.webp";
 import category3 from "/public/category3.webp";
 import "@/style/content-page.sass";
-import { PrismaClient } from "@prisma/client";
 
 const imgsMeetupWorkCardsJSX: KeyValueMap<StaticImageData> = {
   handsUp,
@@ -63,11 +61,6 @@ const categoryCardsJSX = categoryCards.map(
 // const prisma = new PrismaClient();
 
 export default function Home() {
-  const { data } = useFetchData();
-  // const tests = await prisma.user.findMany();
-  // console.log({ "ELOELELELELELE": tests });
-  console.log(data?.users);
-
   return (
     <div className="content-page">
       <Navigation />

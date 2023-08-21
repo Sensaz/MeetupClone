@@ -207,7 +207,12 @@ export const RegisterPopUpButtons: ButtonPupUp[] = [
   },
   { id: 2, text: "Kontynuuj za pomocą google", icon: "google" },
   { id: 3, text: "Kontynuuj za pomocą apple", icon: "star is-transparent" },
-  { id: 4, text: "Kontynuuj za pomocą gmail", icon: "gmail" },
+  {
+    id: 4,
+    text: "Kontynuuj za pomocą gmail",
+    icon: "gmail",
+    manualRegistration: true,
+  },
 ];
 
 export const groupsNearMeetupSortsSetup: SortSetup[] = [

@@ -5,7 +5,7 @@ import { getSdk } from "./generated/graphql";
 
 const gqlClient = new GraphQLClient("http://localhost:3000/api/graphql");
 
-export const { getUsers } = getSdk(gqlClient);
+export const { getUsers, RegisterUser } = getSdk(gqlClient);
 
 export const queryClient = new QueryClient({
   defaultOptions: {

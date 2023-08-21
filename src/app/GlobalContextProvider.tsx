@@ -7,8 +7,11 @@ const contextVoidSchema = z.function().returns(z.void());
 const iglobalContextSchema = z.object({
   showLoginPopUp: z.boolean(),
   showRegisterPopUp: z.boolean(),
-  handleToggleLoginPopUp: contextVoidSchema,
-  handleToggleRegisterPopUp: contextVoidSchema,
+  showManualRegistration: z.boolean(),
+  handleCloseAuthPopUp: contextVoidSchema,
+  handleOpenManualRegistrationPopUp: contextVoidSchema,
+  handleOpenRegisterPopUp: contextVoidSchema,
+  handleOpenLoginPopUp: contextVoidSchema,
 });
 
 type IGlobalContextProps = z.infer<typeof iglobalContextSchema>;
@@ -20,8 +23,11 @@ type GlobalContextProviderProps = {
 export const GlobalContext = createContext<IGlobalContextProps>({
   showLoginPopUp: false,
   showRegisterPopUp: false,
-  handleToggleLoginPopUp: () => {},
-  handleToggleRegisterPopUp: () => {},
+  showManualRegistration: false,
+  handleCloseAuthPopUp: () => {},
+  handleOpenManualRegistrationPopUp: () => {},
+  handleOpenRegisterPopUp: () => {},
+  handleOpenLoginPopUp: () => {},
 });
 
 export const GlobalContextProvider = ({
@@ -29,12 +35,31 @@ export const GlobalContextProvider = ({
 }: GlobalContextProviderProps) => {
   const [showLoginPopUp, setShowLoginPopUp] = useState<boolean>(false);
   const [showRegisterPopUp, setShowRegisterPopUp] = useState<boolean>(false);
+  const [showManualRegistration, setShowManualRegistration] =
+    useState<boolean>(false);
 
-  const handleToggleLoginPopUp: Void = useCallback(() => {
-    setShowLoginPopUp((prev) => !prev);
+  const handleOpenLoginPopUp: Void = useCallback(() => {
+    setShowLoginPopUp(true);
+    setShowRegisterPopUp(false);
+    setShowManualRegistration(false);
   }, []);
-  const handleToggleRegisterPopUp: Void = useCallback(() => {
-    setShowRegisterPopUp((prev) => !prev);
+
+  const handleOpenRegisterPopUp: Void = useCallback(() => {
+    setShowRegisterPopUp(true);
+    setShowManualRegistration(false);
+    setShowLoginPopUp(false);
+  }, []);
+
+  const handleOpenManualRegistrationPopUp: Void = useCallback(() => {
+    setShowManualRegistration(true);
+    setShowRegisterPopUp(false);
+    setShowLoginPopUp(false);
+  }, []);
+
+  const handleCloseAuthPopUp: Void = useCallback(() => {
+    setShowLoginPopUp(false);
+    setShowRegisterPopUp(false);
+    setShowManualRegistration(false);
   }, []);
 
   return (
@@ -42,8 +67,11 @@ export const GlobalContextProvider = ({
       value={{
         showLoginPopUp,
         showRegisterPopUp,
-        handleToggleLoginPopUp,
-        handleToggleRegisterPopUp,
+        showManualRegistration,
+        handleCloseAuthPopUp,
+        handleOpenManualRegistrationPopUp,
+        handleOpenRegisterPopUp,
+        handleOpenLoginPopUp,
       }}
     >
       {children}

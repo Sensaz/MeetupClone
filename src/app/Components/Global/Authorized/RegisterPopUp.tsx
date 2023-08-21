@@ -11,34 +11,35 @@ import "@/style/portal-children.sass";
 export const RegisterPopUp = () => {
   const {
     showRegisterPopUp,
-    handleToggleLoginPopUp,
-    handleToggleRegisterPopUp,
+    handleOpenLoginPopUp,
+    handleCloseAuthPopUp,
+    handleOpenManualRegistrationPopUp,
   } = useContext(GlobalContext);
   const buttonsSection = useMemo(
     () =>
-      RegisterPopUpButtons.map(({ id, text, icon }: ButtonPupUp) => (
-        <Button key={id} className="portal-children__button">
-          <i className={classNames("nes-icon is-medium", icon)}></i>
-          {text}
-        </Button>
-      )),
+      RegisterPopUpButtons.map(
+        ({ id, text, icon, manualRegistration }: ButtonPupUp) => (
+          <Button
+            click={manualRegistration ? handleOpenManualRegistrationPopUp : () => {}}
+            key={id}
+            className="portal-children__button"
+          >
+            <i className={classNames("nes-icon is-medium", icon)}></i>
+            {text}
+          </Button>
+        )
+      ),
     []
   );
 
   return (
-    <Portal open={showRegisterPopUp} handleOpen={handleToggleRegisterPopUp}>
+    <Portal open={showRegisterPopUp} handleClose={handleCloseAuthPopUp}>
       <div className="portal-children">
         <header className="portal-children__header">
           <h2 className="portal-children__title">Zarejestruj się</h2>
           <p className="portal-children__message">
             Masz ju konto?{" "}
-            <a
-              href="#"
-              onClick={() => {
-                handleToggleRegisterPopUp();
-                handleToggleLoginPopUp();
-              }}
-            >
+            <a href="#" onClick={handleOpenLoginPopUp}>
               Zaloguj się
             </a>
           </p>

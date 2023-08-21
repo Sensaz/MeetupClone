@@ -20,13 +20,13 @@ export const AuthButton = ({
   className,
   auth,
 }: AuthButtonProps) => {
-  const { handleToggleLoginPopUp, handleToggleRegisterPopUp } =
+  const { handleOpenLoginPopUp, handleOpenRegisterPopUp } =
     useContext(GlobalContext);
 
   const SHOW_AUTH: KeyValueMap<Void> = useMemo(
     () => ({
-      login: handleToggleLoginPopUp,
-      register: handleToggleRegisterPopUp,
+      login: handleOpenLoginPopUp,
+      register: handleOpenRegisterPopUp,
     }),
     []
   );
